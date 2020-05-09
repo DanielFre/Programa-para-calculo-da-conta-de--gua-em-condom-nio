@@ -1,2 +1,2 @@
-# Programa-para-calculo-da-conta-de--gua-em-condom-nio
+# Programa-para-calculo-da-conta-de-água-em-condomínio
 Sistema para calcular o valor gasto com base na na quantidade de litros gastos, nos casos onde vem uma conta de água só e, é preciso dividir entre vários apartamentos com base no relógio de cada apartamento e no relógio geral de água. basta informar a leitura de água anterior e a atual para obter o valor, os valores da taxa de água e do metro cubico é preciso alterar no código.
