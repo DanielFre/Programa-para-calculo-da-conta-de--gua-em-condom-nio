@@ -40,60 +40,331 @@ public class ContaDeAgua extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jbCalcular = new javax.swing.JButton();
         jlValorDaConta = new javax.swing.JLabel();
-        jlTaxa = new javax.swing.JLabel();
-        jlValorLitro = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtfLeituraAtual1 = new javax.swing.JTextField();
+        jtfLeituraAnteriorl1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jtfLeituraAtual2 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jtfLeituraAnteriorl2 = new javax.swing.JTextField();
+        jtfLeituraAtual3 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jtfLeituraAnteriorl3 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jtfLeituraAnteriorl4 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jtfLeituraAtual4 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jtfLeituraAtual5 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jtfLeituraAnteriorl5 = new javax.swing.JTextField();
+        jtfLeituraAtual6 = new javax.swing.JTextField();
+        jtfLeituraAnteriorl6 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jtfLeituraAnteriorl7 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jtfLeituraAnteriorl8 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jlValorDaConta1 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jlValorDaConta2 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jlValorDaConta3 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jlValorDaConta4 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jlValorDaConta5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Calculo de Água");
         setLocation(new java.awt.Point(0, 0));
-        setMaximumSize(new java.awt.Dimension(550, 300));
-        setMinimumSize(new java.awt.Dimension(550, 300));
-        setPreferredSize(new java.awt.Dimension(550, 300));
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(908, 520));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jtfLeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jtfLeituraAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 175, -1));
+        getContentPane().add(jtfLeituraAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 175, -1));
 
         jtfLeituraAnteriorl.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(jtfLeituraAnteriorl, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 175, -1));
+        getContentPane().add(jtfLeituraAnteriorl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 175, -1));
 
         jLabel1.setText("Leitura Anterior:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel2.setText("Valor a ser pago este mês:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Sistema de Cálculo do valor de água a ser pago!");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 910, 30));
 
         jLabel4.setText("Leitura Atual:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 80, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 80, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("R$: ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, 22));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, -1, 20));
 
         jbCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbCalcular.setText("Calcular");
+        jbCalcular.setMaximumSize(new java.awt.Dimension(79, 20));
+        jbCalcular.setMinimumSize(new java.awt.Dimension(79, 20));
         jbCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        getContentPane().add(jbCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 100, 30));
 
         jlValorDaConta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlValorDaConta.setText("0,00");
-        getContentPane().add(jlValorDaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 69, 22));
+        getContentPane().add(jlValorDaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 140, 69, 20));
 
-        jlTaxa.setText("Valor atual da Taxa: R$ 0,00");
-        getContentPane().add(jlTaxa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setText("Apto 103");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 70, 20));
 
-        jlValorLitro.setText("Valor do litro de água excedente a taxa: R$ 0,00");
-        getContentPane().add(jlValorLitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
+        jtfLeituraAtual1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAtual1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 175, -1));
+
+        jtfLeituraAnteriorl1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 175, -1));
+
+        jLabel7.setText("Leitura Anterior:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+
+        jLabel8.setText("Leitura Atual:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 80, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("Apto 104");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 70, 20));
+
+        jtfLeituraAtual2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAtual2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 175, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setText("Apto 203");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 70, 20));
+
+        jLabel11.setText("Leitura Anterior:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
+
+        jLabel12.setText("Leitura Atual:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 80, -1));
+
+        jtfLeituraAnteriorl2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 175, -1));
+
+        jtfLeituraAtual3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAtual3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 175, -1));
+
+        jLabel13.setText("Leitura Anterior:");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
+
+        jLabel14.setText("Leitura Atual:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 80, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel15.setText("Apto 204");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 70, 20));
+
+        jtfLeituraAnteriorl3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 175, -1));
+
+        jLabel16.setText("Leitura Anterior:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
+
+        jtfLeituraAnteriorl4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 175, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setText("Apto 303");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 70, 20));
+
+        jtfLeituraAtual4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAtual4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 175, -1));
+
+        jLabel18.setText("Leitura Atual:");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 80, -1));
+
+        jLabel19.setText("Leitura Anterior:");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+
+        jtfLeituraAtual5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAtual5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 175, -1));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel20.setText("Apto 304");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 70, 20));
+
+        jLabel21.setText("Leitura Atual:");
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, 80, -1));
+
+        jtfLeituraAnteriorl5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 175, -1));
+
+        jtfLeituraAtual6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAtual6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 175, -1));
+
+        jtfLeituraAnteriorl6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 175, -1));
+
+        jLabel22.setText("Taxa Total da Agua:");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
+
+        jLabel23.setText("Valor Total da Conta:");
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 170, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 910, 10));
+
+        jtfLeituraAnteriorl7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 175, -1));
+
+        jLabel24.setText("Total de Juros:");
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 100, 10));
+
+        jtfLeituraAnteriorl8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jtfLeituraAnteriorl8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 175, -1));
+
+        jLabel25.setText("Quantos atrasaram o Pagamento?");
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 170, -1));
+
+        jCheckBox1.setText("Pagou atrasado?");
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
+
+        jCheckBox3.setText("Pagou atrasado?");
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
+
+        jCheckBox4.setText("Pagou atrasado?");
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
+
+        jCheckBox5.setText("Pagou atrasado?");
+        getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, -1, -1));
+
+        jCheckBox6.setText("Pagou atrasado?");
+        getContentPane().add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, -1, -1));
+
+        jLabel26.setText("Pagamentos após o dia 02 de cada mês são considerados pagamentos em atraso.");
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 410, -1));
+
+        jLabel27.setText("Vencimento da conta: dia 02 de cada mês.");
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel28.setText("Valor a ser pago este mês:");
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, -1, 20));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel29.setText("R$: ");
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, -1, 20));
+
+        jlValorDaConta1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlValorDaConta1.setText("0,00");
+        getContentPane().add(jlValorDaConta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 200, 69, 20));
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel30.setText("R$: ");
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 260, -1, 20));
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel31.setText("Valor a ser pago este mês:");
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, -1, 20));
+
+        jlValorDaConta2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlValorDaConta2.setText("0,00");
+        getContentPane().add(jlValorDaConta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 69, 20));
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel32.setText("Valor a ser pago este mês:");
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, 20));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel33.setText("R$: ");
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, -1, 20));
+
+        jlValorDaConta3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlValorDaConta3.setText("0,00");
+        getContentPane().add(jlValorDaConta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 320, 69, 20));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel34.setText("Valor a ser pago este mês:");
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, 20));
+
+        jlValorDaConta4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlValorDaConta4.setText("0,00");
+        getContentPane().add(jlValorDaConta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, 69, 20));
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel35.setText("R$: ");
+        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 380, -1, 20));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel36.setText("R$: ");
+        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 440, -1, 20));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel37.setText("Valor a ser pago este mês:");
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, -1, 20));
+
+        jlValorDaConta5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlValorDaConta5.setText("0,00");
+        getContentPane().add(jlValorDaConta5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 440, 69, 20));
+
+        jButton1.setText("Salvar");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 110, 30));
+
+        jCheckBox7.setText("Tem Relógio?");
+        getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 90, -1));
+
+        jCheckBox8.setText("Pagou atrasado?");
+        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
+
+        jCheckBox9.setText("Tem Relógio?");
+        getContentPane().add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 90, -1));
+
+        jCheckBox10.setText("Tem Relógio?");
+        getContentPane().add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 90, -1));
+
+        jCheckBox11.setText("Tem Relógio?");
+        getContentPane().add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 90, -1));
+
+        jCheckBox12.setText("Tem Relógio?");
+        getContentPane().add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 90, -1));
+
+        jCheckBox13.setText("Tem Relógio?");
+        getContentPane().add(jCheckBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 90, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -114,8 +385,8 @@ public class ContaDeAgua extends javax.swing.JFrame {
         int leituraAtual = Integer.parseInt(jtfLeituraAtual.getText());
         int leituraAnterior = Integer.parseInt(jtfLeituraAnteriorl.getText());
         int litros = leituraAtual - leituraAnterior;
-            jlTaxa.setText("Valor atual da Taxa: R$" + taxaReaisAredondada.toString());
-            jlValorLitro.setText("Valor aprox. do litro de água excedente a taxa: R$"+valorLitroExedenteAredondada);
+           // jlTaxa.setText("Valor atual da Taxa: R$" + taxaReaisAredondada.toString());;
+           // jlValorLitro.setText("Valor aprox. do litro de água excedente a taxa: R$"+valorLitroExedenteAredondada);;;
         if (litros <= aguaDentroDaTaxa) {
 //            jtfValorApagar.setText(taxaReaisAredondada.toString());
             jlValorDaConta.setText(taxaReaisAredondada.toString());
@@ -170,16 +441,79 @@ public class ContaDeAgua extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbCalcular;
-    private javax.swing.JLabel jlTaxa;
     private javax.swing.JLabel jlValorDaConta;
-    private javax.swing.JLabel jlValorLitro;
+    private javax.swing.JLabel jlValorDaConta1;
+    private javax.swing.JLabel jlValorDaConta2;
+    private javax.swing.JLabel jlValorDaConta3;
+    private javax.swing.JLabel jlValorDaConta4;
+    private javax.swing.JLabel jlValorDaConta5;
     private javax.swing.JTextField jtfLeituraAnteriorl;
+    private javax.swing.JTextField jtfLeituraAnteriorl1;
+    private javax.swing.JTextField jtfLeituraAnteriorl2;
+    private javax.swing.JTextField jtfLeituraAnteriorl3;
+    private javax.swing.JTextField jtfLeituraAnteriorl4;
+    private javax.swing.JTextField jtfLeituraAnteriorl5;
+    private javax.swing.JTextField jtfLeituraAnteriorl6;
+    private javax.swing.JTextField jtfLeituraAnteriorl7;
+    private javax.swing.JTextField jtfLeituraAnteriorl8;
     private javax.swing.JTextField jtfLeituraAtual;
+    private javax.swing.JTextField jtfLeituraAtual1;
+    private javax.swing.JTextField jtfLeituraAtual2;
+    private javax.swing.JTextField jtfLeituraAtual3;
+    private javax.swing.JTextField jtfLeituraAtual4;
+    private javax.swing.JTextField jtfLeituraAtual5;
+    private javax.swing.JTextField jtfLeituraAtual6;
     // End of variables declaration//GEN-END:variables
 }
