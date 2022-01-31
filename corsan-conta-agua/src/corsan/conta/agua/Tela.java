@@ -15,6 +15,15 @@ public class Tela extends javax.swing.JFrame {
      * Creates new form Tela
      */
     public Tela() {
+        
+//          total da conta, 
+//          menos o valor da taxa, 
+//          e menos o valor dos juros, 
+//          dividido pelo consumo em m³ da conta, 
+//          é igual ao valor do m³ da agua, 
+//          que sera usado para calcular o valor da agua dos relógios
+       
+        
         initComponents();
         setExtendedState(MAXIMIZED_BOTH); 
     }
@@ -37,8 +46,83 @@ public class Tela extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTfAtrasaramPagamento = new javax.swing.JTextField();
-        jTfAtrasaramPagamento1 = new javax.swing.JTextField();
+        jTfTotalContaDeAgua = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        jTfTotalM3conta = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTfApto103LeituraAnterior = new javax.swing.JTextField();
+        jCbApto103PagouAtrasado = new javax.swing.JCheckBox();
+        jCbApto103TemRelogio = new javax.swing.JCheckBox();
+        jTfApto103LeituraAtual = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLapto103ValorApagar = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jCbApto104TemRelogio = new javax.swing.JCheckBox();
+        jTfApto104LeituraAnterior = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jCbApto104PagouAtrasado = new javax.swing.JCheckBox();
+        jLapto104ValorApagar = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jTfApto104LeituraAtual = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jTfApto203LeituraAnterior = new javax.swing.JTextField();
+        jCbApto203PagouAtrasado = new javax.swing.JCheckBox();
+        jCbApto203TemRelogio = new javax.swing.JCheckBox();
+        jTfApto203LeituraAtual = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLapto203ValorApagar = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jCbApto204TemRelogio = new javax.swing.JCheckBox();
+        jTfApto204LeituraAnterior = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jCbApto204PagouAtrasado = new javax.swing.JCheckBox();
+        jLapto204ValorApagar = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jTfApto204LeituraAtual = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jTfApto303LeituraAnterior = new javax.swing.JTextField();
+        jCbApto303PagouAtrasado = new javax.swing.JCheckBox();
+        jCbApto303TemRelogio = new javax.swing.JCheckBox();
+        jTfApto303LeituraAtual = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLapto303ValorApagar = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jCbApto304TemRelogio = new javax.swing.JCheckBox();
+        jTfApto304LeituraAnterior = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jCbApto304PagouAtrasado = new javax.swing.JCheckBox();
+        jLapto304ValorApagar = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jTfApto304LeituraAtual = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jTfTotalContaDeAgua1 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -57,7 +141,6 @@ public class Tela extends javax.swing.JFrame {
         jBsair.setContentAreaFilled(false);
         jBsair.setFocusPainted(false);
         jBsair.setFocusable(false);
-        jBsair.setOpaque(false);
         jBsair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBsairActionPerformed(evt);
@@ -69,9 +152,9 @@ public class Tela extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBsair, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -100,18 +183,531 @@ public class Tela extends javax.swing.JFrame {
         jTfAtrasaramPagamento.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTfAtrasaramPagamento.setMinimumSize(new java.awt.Dimension(8, 80));
 
-        jTfAtrasaramPagamento1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfAtrasaramPagamento1.setMinimumSize(new java.awt.Dimension(8, 80));
+        jTfTotalContaDeAgua.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfTotalContaDeAgua.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jLabel5.setText("Total Conta Água:");
+
+        jLabel6.setText("Total m³ Conta:");
+
+        jTfTotalM3conta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfTotalM3conta.setMinimumSize(new java.awt.Dimension(8, 80));
+
+        jPanel2.setBackground(new java.awt.Color(200, 200, 200));
+
+        jLabel7.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel7.setText("Apto 103 - Leitura Anterior:");
+
+        jTfApto103LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jCbApto103PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto103PagouAtrasado.setText("Pagou Atrasado?");
+
+        jCbApto103TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto103TemRelogio.setText("Tem Relógio?");
+
+        jTfApto103LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel8.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel8.setText("Apto 103 - Leitura Atual:");
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("-");
+
+        jLabel10.setText("=");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("R$");
+
+        jLapto103ValorApagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLapto103ValorApagar.setText("120,00");
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jCbApto104TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto104TemRelogio.setText("Tem Relógio?");
+
+        jTfApto104LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel15.setText("=");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setText("R$");
+
+        jCbApto104PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto104PagouAtrasado.setText("Pagou Atrasado?");
+
+        jLapto104ValorApagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLapto104ValorApagar.setText("120,00");
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("-");
+
+        jLabel14.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel14.setText("Apto 104 - Leitura Atual:");
+
+        jTfApto104LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel12.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel12.setText("Apto 104 - Leitura Anterior:");
+
+        jLabel37.setText("Rose:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCbApto103PagouAtrasado)
+                    .addComponent(jCbApto103TemRelogio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jTfApto103LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTfApto103LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLapto103ValorApagar))
+                    .addComponent(jLabel37))
+                .addGap(18, 22, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 22, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCbApto104PagouAtrasado)
+                    .addComponent(jCbApto104TemRelogio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jTfApto104LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTfApto104LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLapto104ValorApagar)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jCbApto103TemRelogio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCbApto103PagouAtrasado))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto103LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel37))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto103LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLapto103ValorApagar))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator2)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jCbApto104TemRelogio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCbApto104PagouAtrasado))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto104LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto104LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLapto104ValorApagar))))
+                .addContainerGap())
+        );
+
+        jPanel3.setBackground(new java.awt.Color(200, 200, 200));
+
+        jLabel17.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel17.setText("Apto 203 - Leitura Anterior:");
+
+        jTfApto203LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jCbApto203PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto203PagouAtrasado.setText("Pagou Atrasado?");
+
+        jCbApto203TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto203TemRelogio.setText("Tem Relógio?");
+
+        jTfApto203LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel18.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel18.setText("Apto 203 - Leitura Atual:");
+
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("-");
+
+        jLabel20.setText("=");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel21.setText("R$");
+
+        jLapto203ValorApagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLapto203ValorApagar.setText("120,00");
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jCbApto204TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto204TemRelogio.setText("Tem Relógio?");
+
+        jTfApto204LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel22.setText("=");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel23.setText("R$");
+
+        jCbApto204PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto204PagouAtrasado.setText("Pagou Atrasado?");
+
+        jLapto204ValorApagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLapto204ValorApagar.setText("120,00");
+
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("-");
+
+        jLabel25.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel25.setText("Apto 204 - Leitura Atual:");
+
+        jTfApto204LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel26.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel26.setText("Apto 204 - Leitura Anterior:");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCbApto203PagouAtrasado)
+                    .addComponent(jCbApto203TemRelogio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTfApto203LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTfApto203LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLapto203ValorApagar)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCbApto204PagouAtrasado)
+                    .addComponent(jCbApto204TemRelogio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTfApto204LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTfApto204LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLapto204ValorApagar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jCbApto203TemRelogio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCbApto203PagouAtrasado))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto203LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto203LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLapto203ValorApagar))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator3)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jCbApto204TemRelogio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCbApto204PagouAtrasado))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto204LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto204LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23)
+                            .addComponent(jLapto204ValorApagar))))
+                .addContainerGap())
+        );
+
+        jPanel4.setBackground(new java.awt.Color(200, 200, 200));
+
+        jLabel27.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel27.setText("Apto 303 - Leitura Anterior:");
+
+        jTfApto303LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jCbApto303PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto303PagouAtrasado.setText("Pagou Atrasado?");
+
+        jCbApto303TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto303TemRelogio.setText("Tem Relógio?");
+
+        jTfApto303LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel28.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel28.setText("Apto 303 - Leitura Atual:");
+
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("-");
+
+        jLabel30.setText("=");
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel31.setText("R$");
+
+        jLapto303ValorApagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLapto303ValorApagar.setText("120,00");
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jCbApto304TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto304TemRelogio.setText("Tem Relógio?");
+
+        jTfApto304LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel32.setText("=");
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel33.setText("R$");
+
+        jCbApto304PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
+        jCbApto304PagouAtrasado.setText("Pagou Atrasado?");
+
+        jLapto304ValorApagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLapto304ValorApagar.setText("120,00");
+
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("-");
+
+        jLabel35.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel35.setText("Apto 304 - Leitura Atual:");
+
+        jTfApto304LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jLabel36.setBackground(new java.awt.Color(220, 220, 220));
+        jLabel36.setText("Apto 304 - Leitura Anterior:");
+
+        jLabel38.setText("Felipe:");
+
+        jLabel39.setText("William:");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCbApto303PagouAtrasado)
+                    .addComponent(jCbApto303TemRelogio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jTfApto303LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTfApto303LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLapto303ValorApagar))
+                    .addComponent(jLabel38))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCbApto304PagouAtrasado)
+                    .addComponent(jCbApto304TemRelogio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jTfApto304LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTfApto304LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLapto304ValorApagar))
+                    .addComponent(jLabel39))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jCbApto303TemRelogio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCbApto303PagouAtrasado))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto303LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto303LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31)
+                            .addComponent(jLapto303ValorApagar))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator4)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jCbApto304TemRelogio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCbApto304PagouAtrasado))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto304LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTfApto304LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel33)
+                            .addComponent(jLapto304ValorApagar))))
+                .addContainerGap())
+        );
+
+        jLabel40.setText("Rose Pagou a mais:");
+
+        jTfTotalContaDeAgua1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfTotalContaDeAgua1.setText("0,00");
+        jTfTotalContaDeAgua1.setMinimumSize(new java.awt.Dimension(8, 80));
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTfTotalM3conta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTfTaxaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,8 +722,17 @@ public class Tela extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTfAtrasaramPagamento1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTfTotalContaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTfTotalContaDeAgua1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,9 +746,23 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jTfAtrasaramPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTfAtrasaramPagamento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(0, 392, Short.MAX_VALUE))
+                    .addComponent(jTfTotalContaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTfTotalM3conta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jTfTotalContaDeAgua1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel40)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,15 +810,90 @@ public class Tela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBsair;
+    private javax.swing.JCheckBox jCbApto103PagouAtrasado;
+    private javax.swing.JCheckBox jCbApto103TemRelogio;
+    private javax.swing.JCheckBox jCbApto104PagouAtrasado;
+    private javax.swing.JCheckBox jCbApto104TemRelogio;
+    private javax.swing.JCheckBox jCbApto203PagouAtrasado;
+    private javax.swing.JCheckBox jCbApto203TemRelogio;
+    private javax.swing.JCheckBox jCbApto204PagouAtrasado;
+    private javax.swing.JCheckBox jCbApto204TemRelogio;
+    private javax.swing.JCheckBox jCbApto303PagouAtrasado;
+    private javax.swing.JCheckBox jCbApto303TemRelogio;
+    private javax.swing.JCheckBox jCbApto304PagouAtrasado;
+    private javax.swing.JCheckBox jCbApto304TemRelogio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLapto103ValorApagar;
+    private javax.swing.JLabel jLapto104ValorApagar;
+    private javax.swing.JLabel jLapto203ValorApagar;
+    private javax.swing.JLabel jLapto204ValorApagar;
+    private javax.swing.JLabel jLapto303ValorApagar;
+    private javax.swing.JLabel jLapto304ValorApagar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTfApto103LeituraAnterior;
+    private javax.swing.JTextField jTfApto103LeituraAtual;
+    private javax.swing.JTextField jTfApto104LeituraAnterior;
+    private javax.swing.JTextField jTfApto104LeituraAtual;
+    private javax.swing.JTextField jTfApto203LeituraAnterior;
+    private javax.swing.JTextField jTfApto203LeituraAtual;
+    private javax.swing.JTextField jTfApto204LeituraAnterior;
+    private javax.swing.JTextField jTfApto204LeituraAtual;
+    private javax.swing.JTextField jTfApto303LeituraAnterior;
+    private javax.swing.JTextField jTfApto303LeituraAtual;
+    private javax.swing.JTextField jTfApto304LeituraAnterior;
+    private javax.swing.JTextField jTfApto304LeituraAtual;
     private javax.swing.JTextField jTfAtrasaramPagamento;
-    private javax.swing.JTextField jTfAtrasaramPagamento1;
     private javax.swing.JTextField jTfTaxaDeAgua;
+    private javax.swing.JTextField jTfTotalContaDeAgua;
+    private javax.swing.JTextField jTfTotalContaDeAgua1;
     private javax.swing.JTextField jTfTotalJuros;
+    private javax.swing.JTextField jTfTotalM3conta;
     // End of variables declaration//GEN-END:variables
 }
