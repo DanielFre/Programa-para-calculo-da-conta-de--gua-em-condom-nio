@@ -5,6 +5,9 @@
  */
 package corsan.conta.agua;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  *
  * @author daniel.frey
@@ -15,14 +18,6 @@ public class Tela extends javax.swing.JFrame {
      * Creates new form Tela
      */
     public Tela() {
-        
-//          total da conta, 
-//          menos o valor da taxa, 
-//          e menos o valor dos juros, 
-//          dividido pelo consumo em m³ da conta, 
-//          é igual ao valor do m³ da agua, 
-//          que sera usado para calcular o valor da agua dos relógios
-       
         
         initComponents();
         setExtendedState(MAXIMIZED_BOTH); 
@@ -133,6 +128,9 @@ public class Tela extends javax.swing.JFrame {
         jLsomaRelogios = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLsaldoDemais = new javax.swing.JLabel();
+        jBsalvar = new javax.swing.JButton();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -721,16 +719,27 @@ public class Tela extends javax.swing.JFrame {
         jLvalorM3.setText("06,35");
 
         jBcalcular.setText("Calcular");
+        jBcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBcalcularActionPerformed(evt);
+            }
+        });
 
         jLabel43.setText("Soma Relógios R$:");
 
         jLsomaRelogios.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLsomaRelogios.setText("206,35");
 
-        jLabel44.setText("Saldo Demais R$:");
+        jLabel44.setText("Soma Demais R$:");
 
         jLsaldoDemais.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLsaldoDemais.setText("196,35");
+
+        jBsalvar.setText("Salvar");
+
+        jLabel45.setText("Vencimento da conta: dia 02 de cada mês.");
+
+        jLabel46.setText("Pagamentos após o dia 02 de cada mês são considerados pagamentos em atraso.");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -739,9 +748,10 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jBcalcular))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -760,7 +770,10 @@ public class Tela extends javax.swing.JFrame {
                                 .addComponent(jLabel44)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLsaldoDemais)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -769,11 +782,13 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
-                    .addComponent(jLtaxaPorApto))
+                    .addComponent(jLtaxaPorApto)
+                    .addComponent(jLabel45))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(jLvalorM3))
+                    .addComponent(jLvalorM3)
+                    .addComponent(jLabel46))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
@@ -782,9 +797,11 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
                     .addComponent(jLsaldoDemais))
-                .addGap(62, 62, 62)
-                .addComponent(jBcalcular)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBcalcular)
+                    .addComponent(jBsalvar))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -870,6 +887,33 @@ public class Tela extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jBsairActionPerformed
 
+    private void jBcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcalcularActionPerformed
+        
+       CalculaTaxaPorApto();
+        
+        
+        
+        
+    }//GEN-LAST:event_jBcalcularActionPerformed
+    
+    public void CalculaTaxaPorApto() {
+        
+//          total da conta, 
+//          menos o valor da taxa, 
+//          e menos o valor dos juros, 
+//          dividido pelo consumo em m³ da conta, 
+//          é igual ao valor do m³ da agua, 
+//          que sera usado para calcular o valor da agua dos relógios
+       
+        float TotalContaDeAgua = Integer.parseInt(jTfTotalContaDeAgua.getText());
+        float TaxaDeAgua = Integer.parseInt(jTfTaxaDeAgua.getText());
+        float TotalJuros = Integer.parseInt(jTfTotalJuros.getText());
+        float TotalM3conta = Integer.parseInt(jTfTotalM3conta.getText());
+        
+        BigDecimal TaxaPorApto = new BigDecimal((TotalContaDeAgua-TaxaDeAgua-TotalJuros)/TotalM3conta).setScale(2, RoundingMode.HALF_EVEN);
+    
+        jLtaxaPorApto.setText(TaxaPorApto.toString());
+    }
     /**
      * @param args the command line arguments
      */
@@ -908,6 +952,7 @@ public class Tela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcalcular;
     private javax.swing.JButton jBsair;
+    private javax.swing.JButton jBsalvar;
     private javax.swing.JCheckBox jCbApto103PagouAtrasado;
     private javax.swing.JCheckBox jCbApto103TemRelogio;
     private javax.swing.JCheckBox jCbApto104PagouAtrasado;
@@ -959,6 +1004,8 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
