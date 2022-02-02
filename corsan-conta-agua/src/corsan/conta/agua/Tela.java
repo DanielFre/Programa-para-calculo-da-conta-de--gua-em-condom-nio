@@ -19,6 +19,8 @@ public class Tela extends javax.swing.JFrame {
      */
     int atrasaramPagamento = 0;
     double jurosPorApto = 0;
+    double valorM3porApto = 0;
+    double valorTaxaPorApto = 0;
 
     public Tela() {
 
@@ -207,7 +209,7 @@ public class Tela extends javax.swing.JFrame {
         jTfAtrasaramPagamento.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jTfTotalContaDeAgua.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfTotalContaDeAgua.setText("486.09");
+        jTfTotalContaDeAgua.setText("468.09");
         jTfTotalContaDeAgua.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jLabel5.setText("Total Conta Água:");
@@ -1032,6 +1034,9 @@ public class Tela extends javax.swing.JFrame {
 
         BigDecimal TaxaPorApto = new BigDecimal((TaxaDeAgua) / 6).setScale(2, RoundingMode.HALF_EVEN);
         jLtaxaPorApto.setText(TaxaPorApto.toString());
+        
+        valorM3porApto = ((TotalContaDeAgua - TaxaDeAgua - TotalJuros) / TotalM3conta);
+        valorTaxaPorApto = ((TaxaDeAgua) / 6);
     }
 
     public void CalculaJurosPorAptoQueAtrasou() {
@@ -1237,27 +1242,33 @@ public class Tela extends javax.swing.JFrame {
     public void CalculaValorAguaApto103() {
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
-        
+
         if (apto103TemRelogio == true) {
-             int leituraAnterior = Integer.parseInt(jTfApto103LeituraAnterior.getText());
-             int leituraAtual = Integer.parseInt(jTfApto103LeituraAtual.getText());
-             int litros = leituraAtual - leituraAnterior;
-             double valor = ((litros)*);
-        } else {
-
-        }
-
-        if (Apto103pagouAtrasado == true) {
+            int leituraAnterior = Integer.parseInt(jTfApto103LeituraAnterior.getText());
+            int leituraAtual = Integer.parseInt(jTfApto103LeituraAtual.getText());
+            int litros = leituraAtual - leituraAnterior;
+            double valor = ((litros) * valorM3porApto/1000)+valorTaxaPorApto;
+        
+            if (Apto103pagouAtrasado == true) {
             //adicionar na linha de baixo o valor do calculo da agua ainda
-            BigDecimal ValorApagar = new BigDecimal(jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+            BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
             jLapto103ValorApagar.setText(ValorApagar.toString());
 
         } else {
             //remover na linha de baixo o valor do calculo de juros
             jurosPorApto = 0;
-            BigDecimal ValorApagar = new BigDecimal(jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+            BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
             jLapto103ValorApagar.setText(ValorApagar.toString());
         }
+        
+        
+        } else {
+            
+        
+
+        }
+
+        
 
     }
 
