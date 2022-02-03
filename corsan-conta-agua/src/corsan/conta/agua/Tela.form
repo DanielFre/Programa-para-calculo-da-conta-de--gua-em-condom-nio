@@ -95,7 +95,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jBsalvar" min="-2" pref="83" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jBcalcular" min="-2" pref="83" max="-2" attributes="0"/>
+                      <Component id="jBcalcular" min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -474,7 +474,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="1000"/>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCbApto103PagouAtrasado">
@@ -504,7 +504,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="2000"/>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -552,7 +552,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="dc" green="dc" red="dc" type="rgb"/>
             </Property>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Tem Rel&#xf3;gio?"/>
           </Properties>
           <Events>
@@ -564,6 +563,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
@@ -617,6 +617,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
@@ -779,6 +780,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCbApto203PagouAtrasado">
@@ -809,6 +811,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
@@ -856,7 +859,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="dc" green="dc" red="dc" type="rgb"/>
             </Property>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Tem Rel&#xf3;gio?"/>
           </Properties>
           <Events>
@@ -868,6 +870,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel22">
@@ -921,6 +924,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel26">
@@ -1094,6 +1098,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCbApto303PagouAtrasado">
@@ -1123,6 +1128,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel28">
@@ -1181,6 +1187,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel32">
@@ -1234,6 +1241,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel36">

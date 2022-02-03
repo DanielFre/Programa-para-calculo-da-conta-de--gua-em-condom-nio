@@ -26,7 +26,24 @@ public class Tela extends javax.swing.JFrame {
 
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        
+        jTfApto103LeituraAtual.setText("0");
+        jTfApto103LeituraAnterior.setText("0");
 
+        jTfApto104LeituraAtual.setText("0");
+        jTfApto104LeituraAnterior.setText("0");
+
+        jTfApto203LeituraAtual.setText("0");
+        jTfApto203LeituraAnterior.setText("0");
+
+        jTfApto204LeituraAtual.setText("0");
+        jTfApto204LeituraAnterior.setText("0");
+
+        jTfApto303LeituraAtual.setText("0");
+        jTfApto303LeituraAnterior.setText("0");
+
+        jTfApto304LeituraAtual.setText("0");
+        jTfApto304LeituraAnterior.setText("0");
         ValidaSeTemRelogioApto103();
         ValidaSeTemRelogioApto104();
         ValidaSeTemRelogioApto203();
@@ -227,7 +244,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel7.setText("Apto 103 - Leitura Anterior:");
 
         jTfApto103LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfApto103LeituraAnterior.setText("1000");
+        jTfApto103LeituraAnterior.setText("0");
 
         jCbApto103PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
         jCbApto103PagouAtrasado.setText("Pagou Atrasado?");
@@ -246,7 +263,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jTfApto103LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfApto103LeituraAtual.setText("2000");
+        jTfApto103LeituraAtual.setText("0");
 
         jLabel8.setBackground(new java.awt.Color(220, 220, 220));
         jLabel8.setText("Apto 103 - Leitura Atual:");
@@ -265,7 +282,6 @@ public class Tela extends javax.swing.JFrame {
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         jCbApto104TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
-        jCbApto104TemRelogio.setSelected(true);
         jCbApto104TemRelogio.setText("Tem Relógio?");
         jCbApto104TemRelogio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +290,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jTfApto104LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto104LeituraAnterior.setText("0");
 
         jLabel15.setText("=");
 
@@ -298,6 +315,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel14.setText("Apto 104 - Leitura Atual:");
 
         jTfApto104LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto104LeituraAtual.setText("0");
 
         jLabel12.setBackground(new java.awt.Color(220, 220, 220));
         jLabel12.setText("Apto 104 - Leitura Anterior:");
@@ -415,6 +433,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel17.setText("Apto 203 - Leitura Anterior:");
 
         jTfApto203LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto203LeituraAnterior.setText("0");
 
         jCbApto203PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
         jCbApto203PagouAtrasado.setText("Pagou Atrasado?");
@@ -434,6 +453,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jTfApto203LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto203LeituraAtual.setText("0");
 
         jLabel18.setBackground(new java.awt.Color(220, 220, 220));
         jLabel18.setText("Apto 203 - Leitura Atual:");
@@ -452,7 +472,6 @@ public class Tela extends javax.swing.JFrame {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         jCbApto204TemRelogio.setBackground(new java.awt.Color(220, 220, 220));
-        jCbApto204TemRelogio.setSelected(true);
         jCbApto204TemRelogio.setText("Tem Relógio?");
         jCbApto204TemRelogio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -461,6 +480,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jTfApto204LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto204LeituraAnterior.setText("0");
 
         jLabel22.setText("=");
 
@@ -485,6 +505,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel25.setText("Apto 204 - Leitura Atual:");
 
         jTfApto204LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto204LeituraAtual.setText("0");
 
         jLabel26.setBackground(new java.awt.Color(220, 220, 220));
         jLabel26.setText("Apto 204 - Leitura Anterior:");
@@ -595,6 +616,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel27.setText("Apto 303 - Leitura Anterior:");
 
         jTfApto303LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto303LeituraAnterior.setText("0");
 
         jCbApto303PagouAtrasado.setBackground(new java.awt.Color(220, 220, 220));
         jCbApto303PagouAtrasado.setText("Pagou Atrasado?");
@@ -613,6 +635,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jTfApto303LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto303LeituraAtual.setText("0");
 
         jLabel28.setBackground(new java.awt.Color(220, 220, 220));
         jLabel28.setText("Apto 303 - Leitura Atual:");
@@ -639,6 +662,7 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jTfApto304LeituraAnterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto304LeituraAnterior.setText("0");
 
         jLabel32.setText("=");
 
@@ -663,6 +687,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel35.setText("Apto 304 - Leitura Atual:");
 
         jTfApto304LeituraAtual.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTfApto304LeituraAtual.setText("0");
 
         jLabel36.setBackground(new java.awt.Color(220, 220, 220));
         jLabel36.setText("Apto 304 - Leitura Anterior:");
@@ -893,7 +918,7 @@ public class Tela extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -967,7 +992,11 @@ public class Tela extends javax.swing.JFrame {
         CalculaTaxaPorApto();
         CalculaJurosPorAptoQueAtrasou();
         CalculaValorAguaApto103();
-
+        CalculaValorAguaApto104();
+        CalculaValorAguaApto203();
+        CalculaValorAguaApto204();
+        CalculaValorAguaApto303();
+        CalculaValorAguaApto304();
 
     }//GEN-LAST:event_jBcalcularActionPerformed
 
@@ -1034,7 +1063,7 @@ public class Tela extends javax.swing.JFrame {
 
         BigDecimal TaxaPorApto = new BigDecimal((TaxaDeAgua) / 6).setScale(2, RoundingMode.HALF_EVEN);
         jLtaxaPorApto.setText(TaxaPorApto.toString());
-        
+
         valorM3porApto = ((TotalContaDeAgua - TaxaDeAgua - TotalJuros) / TotalM3conta);
         valorTaxaPorApto = ((TaxaDeAgua) / 6);
     }
@@ -1155,7 +1184,7 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("atrasaramPagamento: " + atraso.toString());
+        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1171,7 +1200,7 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("atrasaramPagamento: " + atraso.toString());
+        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1187,7 +1216,7 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("atrasaramPagamento: " + atraso.toString());
+        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1203,7 +1232,7 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("atrasaramPagamento: " + atraso.toString());
+        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1219,7 +1248,7 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("atrasaramPagamento: " + atraso.toString());
+        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1235,10 +1264,11 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("atrasaramPagamento: " + atraso.toString());
+        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
+//   aqui para baixo falta o else para quando não tiver relógio
     public void CalculaValorAguaApto103() {
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
@@ -1247,29 +1277,176 @@ public class Tela extends javax.swing.JFrame {
             int leituraAnterior = Integer.parseInt(jTfApto103LeituraAnterior.getText());
             int leituraAtual = Integer.parseInt(jTfApto103LeituraAtual.getText());
             int litros = leituraAtual - leituraAnterior;
-            double valor = ((litros) * valorM3porApto/1000)+valorTaxaPorApto;
-        
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+
             if (Apto103pagouAtrasado == true) {
-            //adicionar na linha de baixo o valor do calculo da agua ainda
-            BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-            jLapto103ValorApagar.setText(ValorApagar.toString());
+
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto103ValorApagar.setText(ValorApagar.toString());
+
+            } else {
+
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto103ValorApagar.setText(ValorApagar.toString());
+            }
 
         } else {
-            //remover na linha de baixo o valor do calculo de juros
-            jurosPorApto = 0;
-            BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-            jLapto103ValorApagar.setText(ValorApagar.toString());
+
+            //  aqui vai o código se não tiver relógio
         }
-        
-        
+    }
+
+    public void CalculaValorAguaApto104() {
+        boolean Apto104pagouAtrasado = jCbApto104PagouAtrasado.isSelected();
+        boolean apto104TemRelogio = jCbApto104TemRelogio.isSelected();
+
+        if (apto104TemRelogio == true) {
+            int leituraAnterior104 = Integer.parseInt(jTfApto104LeituraAnterior.getText());
+            int leituraAtual104 = Integer.parseInt(jTfApto104LeituraAtual.getText());
+            int litros104 = leituraAtual104 - leituraAnterior104;
+            if (litros104 < 0) {
+                litros104 = litros104 * (-1);
+            }
+            double valor104 = ((litros104) * valorM3porApto / 1000) + valorTaxaPorApto;
+
+            if (Apto104pagouAtrasado == true) {
+
+                BigDecimal ValorApagar104 = new BigDecimal(valor104 + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto104ValorApagar.setText(ValorApagar104.toString());
+
+            } else {
+
+                BigDecimal ValorApagar104 = new BigDecimal(valor104).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto104ValorApagar.setText(ValorApagar104.toString());
+            }
+
         } else {
-            
-        
 
+            //  aqui vai o código se não tiver relógio
         }
+    }
 
-        
+    public void CalculaValorAguaApto203() {
+        boolean Apto203pagouAtrasado = jCbApto203PagouAtrasado.isSelected();
+        boolean apto203TemRelogio = jCbApto203TemRelogio.isSelected();
 
+        if (apto203TemRelogio == true) {
+            int leituraAnterior = Integer.parseInt(jTfApto203LeituraAnterior.getText());
+            int leituraAtual = Integer.parseInt(jTfApto203LeituraAtual.getText());
+            int litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+
+            if (Apto203pagouAtrasado == true) {
+
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto203ValorApagar.setText(ValorApagar.toString());
+
+            } else {
+
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto203ValorApagar.setText(ValorApagar.toString());
+            }
+
+        } else {
+
+            //  aqui vai o código se não tiver relógio
+        }
+    }
+
+    public void CalculaValorAguaApto204() {
+        boolean Apto204pagouAtrasado = jCbApto204PagouAtrasado.isSelected();
+        boolean apto204TemRelogio = jCbApto204TemRelogio.isSelected();
+
+        if (apto204TemRelogio == true) {
+            int leituraAnterior = Integer.parseInt(jTfApto204LeituraAnterior.getText());
+            int leituraAtual = Integer.parseInt(jTfApto204LeituraAtual.getText());
+            int litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+
+            if (Apto204pagouAtrasado == true) {
+
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto204ValorApagar.setText(ValorApagar.toString());
+
+            } else {
+
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto204ValorApagar.setText(ValorApagar.toString());
+            }
+
+        } else {
+
+            //  aqui vai o código se não tiver relógio
+        }
+    }
+
+    public void CalculaValorAguaApto303() {
+        boolean Apto303pagouAtrasado = jCbApto303PagouAtrasado.isSelected();
+        boolean apto303TemRelogio = jCbApto303TemRelogio.isSelected();
+
+        if (apto303TemRelogio == true) {
+            int leituraAnterior = Integer.parseInt(jTfApto303LeituraAnterior.getText());
+            int leituraAtual = Integer.parseInt(jTfApto303LeituraAtual.getText());
+            int litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+
+            if (Apto303pagouAtrasado == true) {
+
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto303ValorApagar.setText(ValorApagar.toString());
+
+            } else {
+
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto303ValorApagar.setText(ValorApagar.toString());
+            }
+
+        } else {
+
+            //  aqui vai o código se não tiver relógio
+        }
+    }
+
+    public void CalculaValorAguaApto304() {
+        boolean Apto304pagouAtrasado = jCbApto304PagouAtrasado.isSelected();
+        boolean apto304TemRelogio = jCbApto304TemRelogio.isSelected();
+
+        if (apto304TemRelogio == true) {
+            int leituraAnterior = Integer.parseInt(jTfApto304LeituraAnterior.getText());
+            int leituraAtual = Integer.parseInt(jTfApto304LeituraAtual.getText());
+            int litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+
+            if (Apto304pagouAtrasado == true) {
+
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto304ValorApagar.setText(ValorApagar.toString());
+
+            } else {
+
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto304ValorApagar.setText(ValorApagar.toString());
+            }
+
+        } else {
+
+            //  aqui vai o código se não tiver relógio
+        }
     }
 
     /**
