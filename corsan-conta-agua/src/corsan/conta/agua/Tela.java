@@ -24,6 +24,7 @@ public class Tela extends javax.swing.JFrame {
     double valorTaxaPorApto = 0;
     double somaRelogios = 0;
     double somaSemRelogios = 0;
+    String console = "Start \n";
 
     public Tela() {
 
@@ -54,6 +55,14 @@ public class Tela extends javax.swing.JFrame {
         ValidaSeTemRelogioApto303();
         ValidaSeTemRelogioApto304();
 
+        ValidaSeApto103pagouAtrasado();
+        ValidaSeApto104pagouAtrasado();
+        ValidaSeApto203pagouAtrasado();
+        ValidaSeApto204pagouAtrasado();
+        ValidaSeApto303pagouAtrasado();
+        ValidaSeApto304pagouAtrasado();
+
+        console = "";
     }
 
     /**
@@ -165,6 +174,8 @@ public class Tela extends javax.swing.JFrame {
         jLvalorM3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTAsaidaConsole = new javax.swing.JTextArea();
+        jLjurosPorApto = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -859,6 +870,11 @@ public class Tela extends javax.swing.JFrame {
         jTAsaidaConsole.setRows(5);
         jScrollPane1.setViewportView(jTAsaidaConsole);
 
+        jLjurosPorApto.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLjurosPorApto.setText("0,00");
+
+        jLabel47.setText("Juros por Apto R$:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -901,8 +917,14 @@ public class Tela extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel45)
+                            .addComponent(jLabel46)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel47)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLjurosPorApto))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel42)
                                         .addComponent(jLabel43))
@@ -910,17 +932,15 @@ public class Tela extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLvalorM3, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLsomaRelogios, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addGroup(layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(jLabel41)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLtaxaPorApto))
-                                .addGroup(layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(jLabel44)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLsaldoDemais)))
-                            .addComponent(jLabel45)
-                            .addComponent(jLabel46))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLsaldoDemais))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -974,10 +994,13 @@ public class Tela extends javax.swing.JFrame {
                             .addComponent(jLabel44)
                             .addComponent(jLsaldoDemais))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel47)
+                            .addComponent(jLjurosPorApto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel45)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel46)
-                        .addGap(0, 20, Short.MAX_VALUE))
+                        .addComponent(jLabel46))
                     .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -996,17 +1019,17 @@ public class Tela extends javax.swing.JFrame {
 
     private void jBcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcalcularActionPerformed
 
-        CalculaTaxaPorApto();
+//        CalculaTaxaPorApto();
+//        CalculaValorAguaDemaisAptos();
         CalculaJurosPorAptoQueAtrasou();
 
-        CalculaValorAguaApto103();
-        CalculaValorAguaApto104();
-        CalculaValorAguaApto203();
-        CalculaValorAguaApto204();
-        CalculaValorAguaApto303();
-        CalculaValorAguaApto304();
+//        CalculaValorAguaApto103();
+//        CalculaValorAguaApto104();
+//        CalculaValorAguaApto203();
+//        CalculaValorAguaApto204();
+//        CalculaValorAguaApto303();
+//        CalculaValorAguaApto304();
 
-        CalculaValorAguaDemaisAptos();
 
     }//GEN-LAST:event_jBcalcularActionPerformed
 
@@ -1059,7 +1082,7 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jCbApto304PagouAtrasadoActionPerformed
 
     private void jBsalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalvarActionPerformed
-        CalculaValorAguaDemaisAptos();
+
     }//GEN-LAST:event_jBsalvarActionPerformed
 
     public void CalculaTaxaPorApto() {
@@ -1088,11 +1111,45 @@ public class Tela extends javax.swing.JFrame {
 
         if (TotalJuros > 0 && atrasaramPagamento > 0) {
             jurosPorApto = TotalJuros / atrasaramPagamento;
-        } else {
-            System.out.println("Não foi Informado Juros e/ou Aptos que atrasaram o pagamento!");
-        }
 
-        System.out.println("jurosPorApto " + jurosPorApto);
+            BigDecimal jurosPapto = new BigDecimal((jurosPorApto)).setScale(2, RoundingMode.HALF_EVEN);
+            jLjurosPorApto.setText(jurosPapto.toString());
+
+            CalculaTaxaPorApto();
+            CalculaValorAguaDemaisAptos();
+            CalculaValorAguaApto103();
+            CalculaValorAguaApto104();
+            CalculaValorAguaApto203();
+            CalculaValorAguaApto204();
+            CalculaValorAguaApto303();
+            CalculaValorAguaApto304();
+
+        } else if (TotalJuros > 0 && atrasaramPagamento == 0) {
+            console = "";
+            console += " \n Foi informado Juros mas não foi informado Aptos que atrasaram o pagamento! \n Informe os campos corretamente e clique em Carcular novamente! \n ................................................................................................................\n";
+            jTAsaidaConsole.setText(console);
+            BigDecimal jurosPapto = new BigDecimal((TotalJuros)).setScale(2, RoundingMode.HALF_EVEN);
+            jLjurosPorApto.setText(jurosPapto.toString());
+
+        } else if (TotalJuros == 0 && atrasaramPagamento > 0) {
+            console = "";
+            console += " \n Não foi Informado Juros mas foi informado Aptos que atrasaram o pagamento! \n Informe os campos corretamente e clique em Carcular novamente! \n ................................................................................................................\n";
+            jTAsaidaConsole.setText(console);
+            BigDecimal jurosPapto = new BigDecimal((jurosPorApto)).setScale(2, RoundingMode.HALF_EVEN);
+            jLjurosPorApto.setText(jurosPapto.toString());
+        
+        }else  if (TotalJuros == 0 && atrasaramPagamento == 0) {
+            
+
+            CalculaTaxaPorApto();
+            CalculaValorAguaDemaisAptos();
+            CalculaValorAguaApto103();
+            CalculaValorAguaApto104();
+            CalculaValorAguaApto203();
+            CalculaValorAguaApto204();
+            CalculaValorAguaApto303();
+            CalculaValorAguaApto304();
+        }
     }
 
 //    
@@ -1118,7 +1175,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Sem Relógios: " + semrel.toString());
+        console += ("\n Sem Relógios: " + semrel.toString());
+        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto104() {
@@ -1141,7 +1199,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Sem Relógios: " + semrel.toString());
+        console += ("\n Sem Relógios: " + semrel.toString());
+        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto203() {
@@ -1164,7 +1223,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Sem Relógios: " + semrel.toString());
+        console += ("\n Sem Relógios: " + semrel.toString());
+        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto204() {
@@ -1188,7 +1248,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Sem Relógios: " + semrel.toString());
+        console += ("\n Sem Relógios: " + semrel.toString());
+        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto303() {
@@ -1211,7 +1272,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Sem Relógios: " + semrel.toString());
+        console += ("\n Sem Relógios: " + semrel.toString());
+        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto304() {
@@ -1234,10 +1296,10 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Sem Relógios: " + semrel.toString());
+        console += ("\n Sem Relógios: " + semrel.toString());
+        jTAsaidaConsole.setText(console);
     }
 
-    
 //    
     public void ValidaSeApto103pagouAtrasado() {
 
@@ -1251,7 +1313,9 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
+        console += ("\n Atrasaram Pagamento: " + atraso.toString());
+        jTAsaidaConsole.setText(console);
+
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1267,7 +1331,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
+        console += ("\n Atrasaram Pagamento: " + atraso.toString());
+        jTAsaidaConsole.setText(console);
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1283,7 +1348,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
+        console += ("\n Atrasaram Pagamento: " + atraso.toString());
+        jTAsaidaConsole.setText(console);
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1299,7 +1365,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
+        console += ("\n Atrasaram Pagamento: " + atraso.toString());
+        jTAsaidaConsole.setText(console);
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1315,7 +1382,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
+        console += ("\n Atrasaram Pagamento: " + atraso.toString());
+        jTAsaidaConsole.setText(console);
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1331,7 +1399,8 @@ public class Tela extends javax.swing.JFrame {
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("Atrasaram Pagamento: " + atraso.toString());
+        console += ("\n Atrasaram Pagamento: " + atraso.toString());
+        jTAsaidaConsole.setText(console);
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
@@ -1347,7 +1416,7 @@ public class Tela extends javax.swing.JFrame {
             if (litros < 0) {
                 litros = litros * (-1);
             }
-            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
 
             if (Apto103pagouAtrasado == true) {
 
@@ -1366,11 +1435,11 @@ public class Tela extends javax.swing.JFrame {
             if (Apto103pagouAtrasado == true) {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto103ValorApagar.setText(valorDaConta.toString());
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto103ValorApagar.setText(valorDaConta.toString());
 
             }
             //  aqui vai o código se não tiver relógio
@@ -1388,7 +1457,7 @@ public class Tela extends javax.swing.JFrame {
             if (litros < 0) {
                 litros = litros * (-1);
             }
-            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
 
             if (Apto104pagouAtrasado == true) {
 
@@ -1407,11 +1476,11 @@ public class Tela extends javax.swing.JFrame {
             if (Apto104pagouAtrasado == true) {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto104ValorApagar.setText(valorDaConta.toString());
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto104ValorApagar.setText(valorDaConta.toString());
 
             }
 
@@ -1430,7 +1499,7 @@ public class Tela extends javax.swing.JFrame {
             if (litros < 0) {
                 litros = litros * (-1);
             }
-            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
 
             if (Apto203pagouAtrasado == true) {
 
@@ -1449,11 +1518,11 @@ public class Tela extends javax.swing.JFrame {
             if (Apto203pagouAtrasado == true) {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto203ValorApagar.setText(valorDaConta.toString());
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto203ValorApagar.setText(valorDaConta.toString());
 
             }
             //  aqui vai o código se não tiver relógio
@@ -1471,7 +1540,7 @@ public class Tela extends javax.swing.JFrame {
             if (litros < 0) {
                 litros = litros * (-1);
             }
-            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
 
             if (Apto204pagouAtrasado == true) {
 
@@ -1490,11 +1559,11 @@ public class Tela extends javax.swing.JFrame {
             if (Apto204pagouAtrasado == true) {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto204ValorApagar.setText(valorDaConta.toString());
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto204ValorApagar.setText(valorDaConta.toString());
 
             }
 
@@ -1513,7 +1582,7 @@ public class Tela extends javax.swing.JFrame {
             if (litros < 0) {
                 litros = litros * (-1);
             }
-            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
 
             if (Apto303pagouAtrasado == true) {
 
@@ -1532,11 +1601,11 @@ public class Tela extends javax.swing.JFrame {
             if (Apto303pagouAtrasado == true) {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto303ValorApagar.setText(valorDaConta.toString());
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                jLapto304ValorApagar.setText(valorDaConta.toString());
+                jLapto303ValorApagar.setText(valorDaConta.toString());
 
             }
             //  aqui vai o código se não tiver relógio
@@ -1554,7 +1623,7 @@ public class Tela extends javax.swing.JFrame {
             if (litros < 0) {
                 litros = litros * (-1);
             }
-            double valor = ((litros) * valorM3porApto / 1000) + valorTaxaPorApto;
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
 
             if (Apto304pagouAtrasado == true) {
 
@@ -1563,7 +1632,6 @@ public class Tela extends javax.swing.JFrame {
                 somaRelogios += (valor);
 
             } else {
-
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
@@ -1592,13 +1660,24 @@ public class Tela extends javax.swing.JFrame {
         double TotalContaDeAguaRestante = Double.parseDouble(jTfTotalContaDeAgua.getText().replace(',', '.'));
         double TotalJurosDemais = Double.parseDouble(jTfTotalJuros.getText().replace(',', '.'));
 
-        somaSemRelogios = (TotalContaDeAguaRestante - somaRelogios - TotalJurosDemais) / naoTemRelogios;
+        if (naoTemRelogios == 6 && atrasaramPagamento == 0) {
+            somaSemRelogios = (TotalContaDeAguaRestante) / naoTemRelogios;
 
-        BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jLsomaRelogios.setText(somadosRelogios.toString());
+            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
 
-        BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTAsaidaConsole.setText("ValorApagarSemRelogios: " + ValorApagarSemRelogios.toString());
+            BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            jLsomaRelogios.setText(somadosRelogios.toString());
+
+        } else {
+            somaSemRelogios = (TotalContaDeAguaRestante - somaRelogios - TotalJurosDemais) / naoTemRelogios;
+
+            BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            jLsomaRelogios.setText(somadosRelogios.toString());
+
+            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
+        }
 
     }
 
@@ -1694,6 +1773,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1705,6 +1785,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLapto204ValorApagar;
     private javax.swing.JLabel jLapto303ValorApagar;
     private javax.swing.JLabel jLapto304ValorApagar;
+    private javax.swing.JLabel jLjurosPorApto;
     private javax.swing.JLabel jLsaldoDemais;
     private javax.swing.JLabel jLsomaRelogios;
     private javax.swing.JLabel jLtaxaPorApto;
