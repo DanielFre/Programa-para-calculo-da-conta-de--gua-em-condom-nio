@@ -1137,6 +1137,7 @@ public class Tela extends javax.swing.JFrame {
             CalculaValorAguaApto304();
 
             CalculaValorAguaDemaisAptos();
+            console = "";
 
             CalculaValorAguaApto103();
             CalculaValorAguaApto104();
@@ -1144,6 +1145,8 @@ public class Tela extends javax.swing.JFrame {
             CalculaValorAguaApto204();
             CalculaValorAguaApto303();
             CalculaValorAguaApto304();
+            jTAsaidaConsole.setText(console);
+
         } else if (TotalJuros > 0 && atrasaramPagamento == 0) {
             console = "";
             console += " \n Foi informado Juros mas não foi informado Aptos que atrasaram o pagamento! \n Informe os campos corretamente e clique em Carcular novamente! \n ................................................................................................................\n";
@@ -1170,6 +1173,8 @@ public class Tela extends javax.swing.JFrame {
             CalculaValorAguaApto304();
 
             CalculaValorAguaDemaisAptos();
+            console = "";
+
             CalculaValorAguaApto103();
             CalculaValorAguaApto104();
             CalculaValorAguaApto203();
@@ -1219,7 +1224,7 @@ public class Tela extends javax.swing.JFrame {
 
         } else if (naoTemRelogios < 6 && atrasaramPagamento > 0) {
 
-            somaSemRelogios = (TotalContaDeAguaRestante - somaRelogios - ((TotalJurosDemais/atrasaramPagamento)*naoTemRelogios)) / naoTemRelogios;
+            somaSemRelogios = (TotalContaDeAguaRestante - somaRelogios - ((TotalJurosDemais / atrasaramPagamento) * naoTemRelogios)) / naoTemRelogios;
             System.out.println("CalculaValorAguaDemaisAptos");
             System.out.println("somaSemRelogios: " + somaSemRelogios);
             System.out.println("TotalContaDeAguaRestante: " + TotalContaDeAguaRestante);
@@ -1522,12 +1527,14 @@ public class Tela extends javax.swing.JFrame {
                 BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor + jurosPorApto);
+                console += ("\n Apto 103: R$" + ValorApagar);
 
             } else {
 
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 103: R$" + ValorApagar);
             }
 
         } else {
@@ -1537,10 +1544,12 @@ public class Tela extends javax.swing.JFrame {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 103: R$" + valorDaConta);
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 103: R$" + valorDaConta);
 
             }
             //  aqui vai o código se não tiver relógio
@@ -1565,12 +1574,15 @@ public class Tela extends javax.swing.JFrame {
                 BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor + jurosPorApto);
+                console += ("\n Apto 104: R$" + ValorApagar);
 
             } else {
 
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 104: R$" + ValorApagar);
+
             }
 
         } else {
@@ -1579,10 +1591,12 @@ public class Tela extends javax.swing.JFrame {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 104: R$" + valorDaConta);
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 104: R$" + valorDaConta);
 
             }
 
@@ -1608,12 +1622,15 @@ public class Tela extends javax.swing.JFrame {
                 BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor + jurosPorApto);
+                console += ("\n Apto 203: R$" + ValorApagar);
 
             } else {
 
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 203: R$" + ValorApagar);
+
             }
 
         } else {
@@ -1622,10 +1639,12 @@ public class Tela extends javax.swing.JFrame {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 203: R$" + valorDaConta);
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 203: R$" + valorDaConta);
 
             }
             //  aqui vai o código se não tiver relógio
@@ -1650,12 +1669,15 @@ public class Tela extends javax.swing.JFrame {
                 BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor + jurosPorApto);
+                console += ("\n Apto 204: R$" + ValorApagar);
 
             } else {
 
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 204: R$" + ValorApagar);
+
             }
 
         } else {
@@ -1664,10 +1686,12 @@ public class Tela extends javax.swing.JFrame {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 204: R$" + valorDaConta);
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 204: R$" + valorDaConta);
 
             }
 
@@ -1693,12 +1717,15 @@ public class Tela extends javax.swing.JFrame {
                 BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor + jurosPorApto);
+                console += ("\n Apto 303: R$" + ValorApagar);
 
             } else {
 
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 303: R$" + ValorApagar);
+
             }
 
         } else {
@@ -1707,10 +1734,12 @@ public class Tela extends javax.swing.JFrame {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 303: R$" + valorDaConta);
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 303: R$" + valorDaConta);
 
             }
             //  aqui vai o código se não tiver relógio
@@ -1735,11 +1764,14 @@ public class Tela extends javax.swing.JFrame {
                 BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 304: R$" + ValorApagar);
 
             } else {
                 BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(ValorApagar.toString());
                 somaRelogios += (valor);
+                console += ("\n Apto 304: R$" + ValorApagar);
+
             }
 
         } else {
@@ -1748,10 +1780,12 @@ public class Tela extends javax.swing.JFrame {
 
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 304: R$" + valorDaConta);
 
             } else {
                 BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(valorDaConta.toString());
+                console += ("\n Apto 304: R$" + valorDaConta);
 
             }
 
