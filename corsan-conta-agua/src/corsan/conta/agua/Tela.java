@@ -1219,7 +1219,7 @@ public class Tela extends javax.swing.JFrame {
 
         } else if (naoTemRelogios < 6 && atrasaramPagamento > 0) {
 
-            somaSemRelogios = (TotalContaDeAguaRestante - somaRelogios - TotalJurosDemais) / naoTemRelogios;
+            somaSemRelogios = (TotalContaDeAguaRestante - somaRelogios - ((TotalJurosDemais/atrasaramPagamento)*naoTemRelogios)) / naoTemRelogios;
             System.out.println("CalculaValorAguaDemaisAptos");
             System.out.println("somaSemRelogios: " + somaSemRelogios);
             System.out.println("TotalContaDeAguaRestante: " + TotalContaDeAguaRestante);
