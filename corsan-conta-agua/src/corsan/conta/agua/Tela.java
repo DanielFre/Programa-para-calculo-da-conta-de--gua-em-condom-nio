@@ -27,7 +27,7 @@ public class Tela extends javax.swing.JFrame {
      * Creates new form Tela
      */
     int atrasaramPagamento = 0;
-    int aptosDesocupados = 0;
+    double aptosDesocupados = 0;
     int naoTemRelogios = 6;
     double jurosPorApto = 0;
     double valorM3porApto = 0;
