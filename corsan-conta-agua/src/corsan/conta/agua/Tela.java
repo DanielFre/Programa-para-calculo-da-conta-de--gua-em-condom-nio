@@ -5,8 +5,17 @@
  */
 package corsan.conta.agua;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -163,6 +172,8 @@ public class Tela extends javax.swing.JFrame {
         jLjurosPorApto = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jBlimparConsole = new javax.swing.JButton();
+        jBcarregar = new javax.swing.JButton();
+        jBnovaLeitura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -215,7 +226,7 @@ public class Tela extends javax.swing.JFrame {
         jTfTaxaDeAgua.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jTfTotalJuros.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfTotalJuros.setText("20.55");
+        jTfTotalJuros.setText("0.00");
         jTfTotalJuros.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jLabel3.setText("Total de Juros:");
@@ -228,7 +239,7 @@ public class Tela extends javax.swing.JFrame {
         jTfAtrasaramPagamento.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jTfTotalContaDeAgua.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfTotalContaDeAgua.setText("468.09");
+        jTfTotalContaDeAgua.setText("0.00");
         jTfTotalContaDeAgua.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jLabel5.setText("Total Conta Água:");
@@ -236,7 +247,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel6.setText("Total m³ Conta:");
 
         jTfTotalM3conta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfTotalM3conta.setText("42");
+        jTfTotalM3conta.setText("0");
         jTfTotalM3conta.setToolTipText("");
         jTfTotalM3conta.setMinimumSize(new java.awt.Dimension(8, 80));
 
@@ -871,6 +882,20 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        jBcarregar.setText("Carregar");
+        jBcarregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBcarregarActionPerformed(evt);
+            }
+        });
+
+        jBnovaLeitura.setText("←  Nova Leitura");
+        jBnovaLeitura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnovaLeituraActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -910,45 +935,46 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTfSemRelogios, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel45)
+                            .addComponent(jLabel46)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel45)
-                                    .addComponent(jLabel46)
-                                    .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel47)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLjurosPorApto))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel42)
-                                            .addComponent(jLabel43))
-                                        .addGap(43, 43, 43)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLvalorM3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLsomaRelogios, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel41)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLtaxaPorApto))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel44)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLsaldoDemais)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jBcarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jBnovaLeitura, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel47)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLjurosPorApto))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel42)
+                                        .addComponent(jLabel43))
+                                    .addGap(43, 43, 43)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLvalorM3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLsomaRelogios, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel41)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLtaxaPorApto))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel44)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLsaldoDemais))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBlimparConsole)))
-                        .addContainerGap())))
+                                .addComponent(jBlimparConsole)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1008,7 +1034,9 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBsalvar)
                     .addComponent(jBcalcular)
-                    .addComponent(jBlimparConsole))
+                    .addComponent(jBlimparConsole)
+                    .addComponent(jBcarregar)
+                    .addComponent(jBnovaLeitura))
                 .addContainerGap())
         );
 
@@ -1090,7 +1118,7 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jCbApto304PagouAtrasadoActionPerformed
 
     private void jBsalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalvarActionPerformed
-
+        SalvarLeiturasEmJson();
     }//GEN-LAST:event_jBsalvarActionPerformed
 
     private void jBlimparConsoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimparConsoleActionPerformed
@@ -1098,6 +1126,128 @@ public class Tela extends javax.swing.JFrame {
         jTAsaidaConsole.setText(console);
     }//GEN-LAST:event_jBlimparConsoleActionPerformed
 
+    private void jBcarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcarregarActionPerformed
+        CarregarLeiturasEmJson();
+    }//GEN-LAST:event_jBcarregarActionPerformed
+
+    private void jBnovaLeituraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnovaLeituraActionPerformed
+        NovaLeitura();
+    }//GEN-LAST:event_jBnovaLeituraActionPerformed
+
+// -----------------------------------------------------------------------------
+
+    public void SalvarLeiturasEmJson() {
+
+        FileWriter writeFileLeituras = null;
+        JSONObject objetoJson = new JSONObject();
+
+        String leituraAnteriorApto103 = jTfApto103LeituraAnterior.getText();
+        String leituraAtualApto103 = jTfApto103LeituraAtual.getText();
+        objetoJson.put("leituraAtualApto103", leituraAtualApto103);
+        objetoJson.put("leituraAnteriorApto103", leituraAnteriorApto103);
+
+        String leituraAnteriorApto104 = jTfApto104LeituraAnterior.getText();
+        String leituraAtualApto104 = jTfApto104LeituraAtual.getText();
+        objetoJson.put("leituraAtualApto104", leituraAtualApto104);
+        objetoJson.put("leituraAnteriorApto104", leituraAnteriorApto104);
+
+        String leituraAnteriorApto203 = jTfApto203LeituraAnterior.getText();
+        String leituraAtualApto203 = jTfApto203LeituraAtual.getText();
+        objetoJson.put("leituraAtualApto203", leituraAtualApto203);
+        objetoJson.put("leituraAnteriorApto203", leituraAnteriorApto203);
+
+        String leituraAnteriorApto204 = jTfApto204LeituraAnterior.getText();
+        String leituraAtualApto204 = jTfApto204LeituraAtual.getText();
+        objetoJson.put("leituraAtualApto204", leituraAtualApto204);
+        objetoJson.put("leituraAnteriorApto204", leituraAnteriorApto204);
+
+        String leituraAnteriorApto303 = jTfApto303LeituraAnterior.getText();
+        String leituraAtualApto303 = jTfApto303LeituraAtual.getText();
+        objetoJson.put("leituraAtualApto303", leituraAtualApto303);
+        objetoJson.put("leituraAnteriorApto303", leituraAnteriorApto303);
+
+        String leituraAnteriorApto304 = jTfApto304LeituraAnterior.getText();
+        String leituraAtualApto304 = jTfApto304LeituraAtual.getText();
+        objetoJson.put("leituraAtualApto304", leituraAtualApto304);
+        objetoJson.put("leituraAnteriorApto304", leituraAnteriorApto304);
+
+        try {
+            writeFileLeituras = new FileWriter("leituras.json");
+            writeFileLeituras.write(objetoJson.toJSONString());
+            writeFileLeituras.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        System.out.println(objetoJson.toJSONString()); 
+    }
+
+    public void CarregarLeiturasEmJson() {
+
+        JSONObject objetoJsonCarregar;
+        JSONParser parser = new JSONParser();
+
+        try {
+            objetoJsonCarregar = (JSONObject) parser.parse(new FileReader("leituras.json"));
+
+            jTfApto103LeituraAnterior.setText((String) objetoJsonCarregar.get("leituraAnteriorApto103"));
+            jTfApto103LeituraAtual.setText((String) objetoJsonCarregar.get("leituraAtualApto103"));
+
+            jTfApto104LeituraAnterior.setText((String) objetoJsonCarregar.get("leituraAnteriorApto104"));
+            jTfApto104LeituraAtual.setText((String) objetoJsonCarregar.get("leituraAtualApto104"));
+
+            jTfApto203LeituraAnterior.setText((String) objetoJsonCarregar.get("leituraAnteriorApto203"));
+            jTfApto203LeituraAtual.setText((String) objetoJsonCarregar.get("leituraAtualApto203"));
+
+            jTfApto204LeituraAnterior.setText((String) objetoJsonCarregar.get("leituraAnteriorApto204"));
+            jTfApto204LeituraAtual.setText((String) objetoJsonCarregar.get("leituraAtualApto204"));
+
+            jTfApto303LeituraAnterior.setText((String) objetoJsonCarregar.get("leituraAnteriorApto303"));
+            jTfApto303LeituraAtual.setText((String) objetoJsonCarregar.get("leituraAtualApto303"));
+
+            jTfApto304LeituraAnterior.setText((String) objetoJsonCarregar.get("leituraAnteriorApto304"));
+            jTfApto304LeituraAtual.setText((String) objetoJsonCarregar.get("leituraAtualApto304"));
+
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ParseException ex) {
+//            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+    }
+
+    public void NovaLeitura() {
+
+        String leituraAtualApto103 = jTfApto103LeituraAtual.getText();
+        String leituraAtualApto104 = jTfApto104LeituraAtual.getText();
+        String leituraAtualApto203 = jTfApto203LeituraAtual.getText();
+        String leituraAtualApto204 = jTfApto204LeituraAtual.getText();
+        String leituraAtualApto303 = jTfApto303LeituraAtual.getText();
+        String leituraAtualApto304 = jTfApto304LeituraAtual.getText();
+
+        jTfApto103LeituraAnterior.setText(leituraAtualApto103);
+        jTfApto103LeituraAtual.setText("");
+
+        jTfApto104LeituraAnterior.setText(leituraAtualApto104);
+        jTfApto104LeituraAtual.setText("");
+
+        jTfApto203LeituraAnterior.setText(leituraAtualApto203);
+        jTfApto203LeituraAtual.setText("");
+
+        jTfApto204LeituraAnterior.setText(leituraAtualApto204);
+        jTfApto204LeituraAtual.setText("");
+
+        jTfApto303LeituraAnterior.setText(leituraAtualApto303);
+        jTfApto303LeituraAtual.setText("");
+
+        jTfApto304LeituraAnterior.setText(leituraAtualApto304);
+        jTfApto304LeituraAtual.setText("");
+
+    }
+
+// -----------------------------------------------------------------------------
     public void CalculaTaxaPorApto() {
 //          total da conta, menos o valor da taxa, e menos o valor dos juros, 
 //          dividido pelo consumo em m³ da conta, é igual ao valor do m³ da agua, 
@@ -1241,7 +1391,7 @@ public class Tela extends javax.swing.JFrame {
 
     }
 
-//   -------------------------------- 
+// ----------------------------------------------------------------------------- 
     public void ValidaSeTemRelogioApto103() {
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
         if (apto103TemRelogio == false) {
@@ -1395,7 +1545,7 @@ public class Tela extends javax.swing.JFrame {
 //        jTAsaidaConsole.setText(console);
     }
 
-//  ---------------------------------  
+// -----------------------------------------------------------------------------
     public void ValidaSeApto103pagouAtrasado() {
 
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
@@ -1506,7 +1656,7 @@ public class Tela extends javax.swing.JFrame {
 //        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
-//  ---------------------------------
+// -----------------------------------------------------------------------------
     public void CalculaValorAguaApto103() {
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
@@ -1793,7 +1943,7 @@ public class Tela extends javax.swing.JFrame {
         }
     }
 
-//   ------------------------------ 
+// -----------------------------------------------------------------------------
     /**
      * @param args the command line arguments
      */
@@ -1831,7 +1981,9 @@ public class Tela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcalcular;
+    private javax.swing.JButton jBcarregar;
     private javax.swing.JButton jBlimparConsole;
+    private javax.swing.JButton jBnovaLeitura;
     private javax.swing.JButton jBsair;
     private javax.swing.JButton jBsalvar;
     private javax.swing.JCheckBox jCbApto103PagouAtrasado;
