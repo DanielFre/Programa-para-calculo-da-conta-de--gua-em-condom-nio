@@ -21,45 +21,64 @@ import org.json.simple.parser.ParseException;
  *
  * @author daniel.frey
  */
-public class Tela extends javax.swing.JFrame {
+public class Painel extends javax.swing.JFrame {
 
     /**
      * Creates new form Tela
      */
+//    Variaveis Globais:
     int atrasaramPagamento = 0;
     double aptosDesocupados = 0;
     int naoTemRelogios = 6;
     int temRelogios = 0;
+    double aptosDesocupadosAtrasados = 0;
+
     double jurosPorApto = 0;
     double valorM3porApto = 0;
     double valorTaxaPorApto = 0;
     double somaRelogios = 0;
     double somaSemRelogios = 0;
+
+    double TotalContaDeAgua = 0;
+    double TaxaDeAgua = 0;
+    double TotalJuros = 0;
+    double TotalM3conta = 0;
+
+    double dividido = 0;
+
     String console = "Start \n";
 
-    public Tela() {
+    BigDecimal ValorApagar103;
+    BigDecimal ValorApagar104;
+    BigDecimal ValorApagar203;
+    BigDecimal ValorApagar204;
+    BigDecimal ValorApagar303;
+    BigDecimal ValorApagar304;
+
+    public Painel() {
 
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
 
-        jTfAtrasaramPagamento.disable();
-        jTfSemRelogios.disable();
+        jTfAtrasaramPagamento.setEnabled(false);
+        jTfSemRelogios.setEnabled(false);
 
+        jLalerta.setText("");
         ValidaSeTemRelogioApto103();
         ValidaSeTemRelogioApto104();
         ValidaSeTemRelogioApto203();
         ValidaSeTemRelogioApto204();
         ValidaSeTemRelogioApto303();
         ValidaSeTemRelogioApto304();
-//
-//        ValidaSeApto103pagouAtrasado();
-//        ValidaSeApto104pagouAtrasado();
-//        ValidaSeApto203pagouAtrasado();
-//        ValidaSeApto204pagouAtrasado();
-//        ValidaSeApto303pagouAtrasado();
-//        ValidaSeApto304pagouAtrasado();
-//
+
         console = "";
+        jCBapto103desocupado.setEnabled(false);
+        jCBapto104desocupado.setEnabled(false);
+        jCBapto203desocupado.setEnabled(false);
+        jCBapto204desocupado.setEnabled(false);
+        jCBapto303desocupado.setEnabled(false);
+        jCBapto304desocupado.setEnabled(false);
+
     }
 
     /**
@@ -182,6 +201,7 @@ public class Tela extends javax.swing.JFrame {
         jBlimparConsole = new javax.swing.JButton();
         jBcarregar = new javax.swing.JButton();
         jBnovaLeitura = new javax.swing.JButton();
+        jLalerta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -983,6 +1003,10 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        jLalerta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLalerta.setForeground(new java.awt.Color(255, 0, 0));
+        jLalerta.setText("teste");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -996,72 +1020,77 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTfTotalM3conta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTfTaxaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTfTotalJuros, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTfTotalContaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTfAtrasaramPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTfSemRelogios, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLalerta)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel45)
-                            .addComponent(jLabel46)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jBcarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTfTotalM3conta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jBnovaLeitura, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel47)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLjurosPorApto))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel42)
-                                        .addComponent(jLabel43))
-                                    .addGap(43, 43, 43)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLvalorM3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLsomaRelogios, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel41)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLtaxaPorApto))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel44)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLsaldoDemais))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTfTaxaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTfTotalJuros, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTfTotalContaDeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTfAtrasaramPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBlimparConsole)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel40)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTfSemRelogios, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel45)
+                                    .addComponent(jLabel46)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jBsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jBcarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jBnovaLeitura, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel47)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLjurosPorApto))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel42)
+                                                .addComponent(jLabel43))
+                                            .addGap(43, 43, 43)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLvalorM3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLsomaRelogios, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel41)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLtaxaPorApto))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel44)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLsaldoDemais))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jBlimparConsole)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1118,6 +1147,8 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jLabel46))
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLalerta)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBsalvar)
                     .addComponent(jBcalcular)
@@ -1136,32 +1167,48 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jBsairActionPerformed
 
     private void jBcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcalcularActionPerformed
-
         jurosPorApto = 0;
         valorM3porApto = 0;
         valorTaxaPorApto = 0;
         somaRelogios = 0;
         somaSemRelogios = 0;
 
-        CalculaTaxaPorApto();
-        
-        CalculaValorAguaApto103();
-        CalculaValorAguaApto104();
-        CalculaValorAguaApto203();
-        CalculaValorAguaApto204();
-        CalculaValorAguaApto303();
-        CalculaValorAguaApto304();
-        // DA ERRO SEMPRE NA LINHA DE BAIXO
-        CalculaJurosPorAptoQueAtrasou();
+        jTAsaidaConsole.setText("");
+        jLalerta.setText("");
 
-//        CalculaTaxaPorApto();
-//        CalculaValorAguaDemaisAptos();
-//        CalculaValorAguaApto103();
-//        CalculaValorAguaApto104();
-//        CalculaValorAguaApto203();
-//        CalculaValorAguaApto204();
-//        CalculaValorAguaApto303();
-//        CalculaValorAguaApto304();
+        CalculaTaxaPorApto();
+        CalculaJurosPorAptoQueAtrasou();
+        CalculaValorAguaDemaisAptos();
+
+        if (somaRelogios > 0 || somaSemRelogios > 0) {
+            CalculaValorAguaApto103();
+            CalculaValorAguaApto104();
+            CalculaValorAguaApto203();
+            CalculaValorAguaApto204();
+            CalculaValorAguaApto303();
+            CalculaValorAguaApto304();
+
+            console = (" Apto 103: R$" + jLapto103ValorApagar.getText());
+            console += ("\n Apto 104: R$" + jLapto104ValorApagar.getText());
+            console += ("\n Apto 203: R$" + jLapto203ValorApagar.getText());
+            console += ("\n Apto 204: R$" + jLapto204ValorApagar.getText());
+            console += ("\n Apto 303: R$" + jLapto303ValorApagar.getText());
+            console += ("\n Apto 304: R$" + jLapto304ValorApagar.getText());
+
+            double apto103 = Double.parseDouble(jLapto103ValorApagar.getText());
+            double apto104 = Double.parseDouble(jLapto104ValorApagar.getText());
+            double apto203 = Double.parseDouble(jLapto203ValorApagar.getText());
+            double apto204 = Double.parseDouble(jLapto204ValorApagar.getText());
+            double apto303 = Double.parseDouble(jLapto303ValorApagar.getText());
+            double apto304 = Double.parseDouble(jLapto304ValorApagar.getText());
+
+            BigDecimal SomaTotalResultante = new BigDecimal(apto103 + apto104 + apto203 + apto204 + apto303 + apto304).setScale(2, RoundingMode.HALF_EVEN);
+
+            console += "\n __________________";
+            console += ("\n Soma Total: R$" + SomaTotalResultante.toString());
+            jTAsaidaConsole.setText(console);
+        }
+
 
     }//GEN-LAST:event_jBcalcularActionPerformed
 
@@ -1308,8 +1355,9 @@ public class Tela extends javax.swing.JFrame {
             writeFileLeituras.close();
 
         } catch (IOException ex) {
-            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Painel.class.getName()).log(Level.SEVERE, null, ex);
         }
+//        System.out.println(objetoJson.toJSONString()); 
 //        System.out.println(objetoJson.toJSONString()); 
     }
 
@@ -1394,154 +1442,161 @@ public class Tela extends javax.swing.JFrame {
 //          dividido pelo consumo em m³ da conta, é igual ao valor do m³ da agua, 
 //          que sera usado para calcular o valor da agua dos relógios
 
-        double TotalContaDeAgua = Double.parseDouble(jTfTotalContaDeAgua.getText().replace(',', '.'));
-        double TaxaDeAgua = Double.parseDouble(jTfTaxaDeAgua.getText().replace(',', '.'));
-        double TotalJuros = Double.parseDouble(jTfTotalJuros.getText().replace(',', '.'));
-        double TotalM3conta = Double.parseDouble(jTfTotalM3conta.getText().replace(',', '.'));
+        TotalContaDeAgua = Double.parseDouble(jTfTotalContaDeAgua.getText().replace(',', '.'));
+        TaxaDeAgua = Double.parseDouble(jTfTaxaDeAgua.getText().replace(',', '.'));
+        TotalJuros = Double.parseDouble(jTfTotalJuros.getText().replace(',', '.'));
+        TotalM3conta = Double.parseDouble(jTfTotalM3conta.getText().replace(',', '.'));
 
         if (TotalContaDeAgua == 0 || TaxaDeAgua == 0 || TotalM3conta == 0) {
             console = "Não foi Informado um ou mais campos do cabeçalho da conta! \n"
                     + "Infome corretamente os Campos: \n"
-                    + "TOTAL M³ CONTA \n"
-                    + "TAXA TOTAL DA ÁGUA \n"
-                    + "TOTAL CONTA ÁGUA \n"
+                    + " - TOTAL M³ CONTA \n"
+                    + " - TAXA TOTAL DA ÁGUA \n"
+                    + " - TOTAL CONTA ÁGUA \n"
                     + "após informa-los clique em Carcular novamente! \n "
                     + "........................................................."
                     + ".......................................................\n";
             jTAsaidaConsole.setText(console);
         } else {
-            BigDecimal ValorM3 = new BigDecimal((TotalContaDeAgua - TaxaDeAgua - TotalJuros) / TotalM3conta).setScale(2, RoundingMode.HALF_EVEN);
-            jLvalorM3.setText(ValorM3.toString());
-
-            BigDecimal TaxaPorApto = new BigDecimal((TaxaDeAgua) / 6).setScale(2, RoundingMode.HALF_EVEN);
-            jLtaxaPorApto.setText(TaxaPorApto.toString());
 
             valorM3porApto = ((TotalContaDeAgua - TaxaDeAgua - TotalJuros) / TotalM3conta);
             valorTaxaPorApto = ((TaxaDeAgua) / 6);
+
+            BigDecimal ValorM3 = new BigDecimal(valorM3porApto).setScale(2, RoundingMode.HALF_EVEN);
+            jLvalorM3.setText(ValorM3.toString());
+
+            BigDecimal TaxaPorApto = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+            jLtaxaPorApto.setText(TaxaPorApto.toString());
+
         }
     }
 
     public void CalculaJurosPorAptoQueAtrasou() {
 
-        double TotalJuros = Double.parseDouble(jTfTotalJuros.getText().replace(',', '.'));
-//            CalculaTaxaPorApto();
-
         if (TotalJuros > 0 && atrasaramPagamento > 0) {
             jurosPorApto = TotalJuros / atrasaramPagamento;
-
             BigDecimal jurosPapto = new BigDecimal((jurosPorApto)).setScale(2, RoundingMode.HALF_EVEN);
             jLjurosPorApto.setText(jurosPapto.toString());
-
-//            CalculaTaxaPorApto();
-//            CalculaValorAguaApto103();
-//            CalculaValorAguaApto104();
-//            CalculaValorAguaApto203();
-//            CalculaValorAguaApto204();
-//            CalculaValorAguaApto303();
-//            CalculaValorAguaApto304();
-            CalculaValorAguaDemaisAptos();
-            console = "";
-
-            CalculaValorAguaApto103();
-            CalculaValorAguaApto104();
-            CalculaValorAguaApto203();
-            CalculaValorAguaApto204();
-            CalculaValorAguaApto303();
-            CalculaValorAguaApto304();
-            jTAsaidaConsole.setText(console);
 
         } else if (TotalJuros > 0 && atrasaramPagamento == 0) {
             console = "";
             console += " \n Foi informado Juros mas não foi informado Aptos que atrasaram o pagamento! \n Informe os campos corretamente e clique em Carcular novamente! \n ................................................................................................................\n";
             jTAsaidaConsole.setText(console);
-            BigDecimal jurosPapto = new BigDecimal((TotalJuros)).setScale(2, RoundingMode.HALF_EVEN);
-            jLjurosPorApto.setText(jurosPapto.toString());
 
         } else if (TotalJuros == 0 && atrasaramPagamento > 0) {
             console = "";
             console += " \n Não foi Informado Juros mas foi informado Aptos que atrasaram o pagamento! \n Informe os campos corretamente e clique em Carcular novamente! \n ................................................................................................................\n";
             jTAsaidaConsole.setText(console);
-            BigDecimal jurosPapto = new BigDecimal((jurosPorApto)).setScale(2, RoundingMode.HALF_EVEN);
-            jLjurosPorApto.setText(jurosPapto.toString());
 
         } else if (TotalJuros == 0 && atrasaramPagamento == 0) {
-
-            console = "\n";
-//            CalculaTaxaPorApto();
-//            CalculaValorAguaApto103();
-//            CalculaValorAguaApto104();
-//            CalculaValorAguaApto203();
-//            CalculaValorAguaApto204();
-//            CalculaValorAguaApto303();
-//            CalculaValorAguaApto304();
-// DA ERRO SEMPRE NA LINHA DE BAIXO-resolvido
-            CalculaValorAguaDemaisAptos();
-//            console = "";
-
-            CalculaValorAguaApto103();
-            CalculaValorAguaApto104();
-            CalculaValorAguaApto203();
-            CalculaValorAguaApto204();
-            CalculaValorAguaApto303();
-            CalculaValorAguaApto304();
-            
             BigDecimal jurosPapto = new BigDecimal((jurosPorApto)).setScale(2, RoundingMode.HALF_EVEN);
             jLjurosPorApto.setText(jurosPapto.toString());
-            jTAsaidaConsole.setText(console);
         }
     }
 
     public void CalculaValorAguaDemaisAptos() {
+// precisa limitar a opção de todos os relógios selecionados
+        CalculaValorAguaApto103();
+        CalculaValorAguaApto104();
+        CalculaValorAguaApto203();
+        CalculaValorAguaApto204();
+        CalculaValorAguaApto303();
+        CalculaValorAguaApto304();
 
-        double TotalContaDeAguaRestante = Double.parseDouble(jTfTotalContaDeAgua.getText().replace(',', '.'));
-        double TotalJurosDemais = Double.parseDouble(jTfTotalJuros.getText().replace(',', '.'));
+        if (naoTemRelogios == 6 && atrasaramPagamento == 0 && aptosDesocupados == 0 || aptosDesocupados == 6) {
 
-        if (naoTemRelogios == 6 && atrasaramPagamento == 0) {
+            somaSemRelogios = (TotalContaDeAgua / naoTemRelogios);
+            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
 
-            somaSemRelogios = (TotalContaDeAguaRestante - (valorTaxaPorApto * aptosDesocupados)) / (naoTemRelogios - aptosDesocupados);
+        } else if (naoTemRelogios == 6 && atrasaramPagamento > 0 && aptosDesocupados == 0 || aptosDesocupados == 6) {
 
-            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            somaSemRelogios = ((TotalContaDeAgua - TotalJuros) / naoTemRelogios);
+            BigDecimal ValorApagarSemRelogios = new BigDecimal((somaSemRelogios * naoTemRelogios) + TotalJuros).setScale(2, RoundingMode.HALF_EVEN);
+            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
+
+        } else if (naoTemRelogios > 0 && naoTemRelogios < 6 && atrasaramPagamento == 0 && aptosDesocupados == 0) {
+
+            somaSemRelogios = ((TotalContaDeAgua - somaRelogios) / naoTemRelogios);
+            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
             jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
 
             BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
             jLsomaRelogios.setText(somadosRelogios.toString());
 
-        } else if (naoTemRelogios == 6 && atrasaramPagamento > 0) {
+        } else if (naoTemRelogios > 0 && naoTemRelogios < 6 && atrasaramPagamento > 0 && aptosDesocupados == 0) {
 
-            somaSemRelogios = (TotalContaDeAguaRestante - (valorTaxaPorApto * aptosDesocupados) - TotalJurosDemais) / (naoTemRelogios - aptosDesocupados);
-
-            BigDecimal ValorApagarSemRelogios = new BigDecimal((somaSemRelogios * (naoTemRelogios - aptosDesocupados)) + TotalJurosDemais).setScale(2, RoundingMode.HALF_EVEN);
+            somaSemRelogios = ((TotalContaDeAgua - somaRelogios - ((TotalJuros / atrasaramPagamento) * naoTemRelogios)) / naoTemRelogios);
+            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
             jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
 
             BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
             jLsomaRelogios.setText(somadosRelogios.toString());
 
-        } else if (naoTemRelogios < 6 && atrasaramPagamento == 0) {
+        } else if (naoTemRelogios == 0 && atrasaramPagamento >= 0) {
 
-            somaSemRelogios = (TotalContaDeAguaRestante - (valorTaxaPorApto * aptosDesocupados) - somaRelogios) / (naoTemRelogios - aptosDesocupados);
+            somaSemRelogios = 0;
+            BigDecimal ValorApagarSemRelogios = new BigDecimal(TotalContaDeAgua - somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
+            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
+
+            if ((TotalContaDeAgua - somaRelogios) > 0) {
+                dividido = (TotalContaDeAgua - somaRelogios) / 6;
+
+                jLalerta.setText("Valor restante de: R$" + ValorApagarSemRelogios.toString() + " foi dividido por 6, o que resultou no valor de: R$" + dividido + " que PRECISA ser somado Manualmente aos valores dos aptos com relógio.");
+
+                double apto103 = Double.parseDouble(jLapto103ValorApagar.getText());
+                ValorApagar103 = new BigDecimal(apto103 + dividido).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto103ValorApagar.setText(ValorApagar103.toString());
+
+                double apto104 = Double.parseDouble(jLapto104ValorApagar.getText());
+                ValorApagar104 = new BigDecimal(apto104 + dividido).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto104ValorApagar.setText(ValorApagar104.toString());
+
+                double apto203 = Double.parseDouble(jLapto203ValorApagar.getText());
+                ValorApagar203 = new BigDecimal(apto203 + dividido).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto203ValorApagar.setText(ValorApagar203.toString());
+
+                double apto204 = Double.parseDouble(jLapto204ValorApagar.getText());
+                ValorApagar204 = new BigDecimal(apto204 + dividido).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto204ValorApagar.setText(ValorApagar204.toString());
+
+                double apto303 = Double.parseDouble(jLapto303ValorApagar.getText());
+                ValorApagar303 = new BigDecimal(apto303 + dividido).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto303ValorApagar.setText(ValorApagar303.toString());
+
+                double apto304 = Double.parseDouble(jLapto304ValorApagar.getText());
+                ValorApagar304 = new BigDecimal(apto304 + dividido).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto304ValorApagar.setText(ValorApagar304.toString());
+            }
 
             BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
             jLsomaRelogios.setText(somadosRelogios.toString());
-// DA ERRO SEMPRE NA LINHA DE BAIXO
-            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * (naoTemRelogios - aptosDesocupados)).setScale(2, RoundingMode.HALF_EVEN);
-            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
-
-        } else if (naoTemRelogios < 6 && atrasaramPagamento > 0) {
-
-            somaSemRelogios = (TotalContaDeAguaRestante - (valorTaxaPorApto * aptosDesocupados) - somaRelogios - ((TotalJurosDemais / atrasaramPagamento) * (naoTemRelogios - aptosDesocupados))) / naoTemRelogios;
-//            System.out.println("CalculaValorAguaDemaisAptos");
-//            System.out.println("somaSemRelogios: " + somaSemRelogios);
-//            System.out.println("TotalContaDeAguaRestante: " + TotalContaDeAguaRestante);
-//            System.out.println("somaRelogios: " + somaRelogios);
-//            System.out.println("TotalJurosDemais: " + TotalJurosDemais);
-//            System.out.println("naoTemRelogios: " + naoTemRelogios);
-
-            BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
-            jLsomaRelogios.setText(somadosRelogios.toString());
-
-            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * (naoTemRelogios - aptosDesocupados)).setScale(2, RoundingMode.HALF_EVEN);
-            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
         }
+//        ///////////////////////aqui pra baixo falta a parte dos aptos desocupados/////////////////////////////////////
+        //        ((valorTaxaPorApto + jurosPorApto)*aptosDesocupados)
+        //        (valorTaxaPorApto*aptosDesocupados)
+//        else if (naoTemRelogios ==0 && atrasaramPagamento == 0 && aptosDesocupados > 0) {
+//
+//            somaSemRelogios = ((TotalContaDeAgua - somaRelogios) / naoTemRelogios);
+//            somaSemRelogios = ((TotalContaDeAgua - (valorTaxaPorApto * aptosDesocupados) - somaRelogios) / naoTemRelogios);
+//            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
+//            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
+//
+//            BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
+//            jLsomaRelogios.setText(somadosRelogios.toString());
+//
+//        } else if (naoTemRelogios ==0 && atrasaramPagamento > 0 && aptosDesocupados > 0) {
+//
+////            somaSemRelogios = ((TotalContaDeAgua - (valorTaxaPorApto * aptosDesocupados) - somaRelogios - ((TotalJuros / atrasaramPagamento) * naoTemRelogios)) / naoTemRelogios);
+//            somaSemRelogios = ((TotalContaDeAgua - (valorTaxaPorApto * (aptosDesocupados - aptosDesocupadosAtrasados)) - ((valorTaxaPorApto + jurosPorApto) * aptosDesocupadosAtrasados) - somaRelogios - ((TotalJuros / atrasaramPagamento) * naoTemRelogios)) / naoTemRelogios);
+//
+////            somaSemRelogios = (TotalContaDeAgua - (valorTaxaPorApto * aptosDesocupados) - somaRelogios - ((TotalJuros / atrasaramPagamento) * (naoTemRelogios - aptosDesocupados))) / naoTemRelogios;
+//            BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
+//            jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
+//
+//            BigDecimal somadosRelogios = new BigDecimal(somaRelogios).setScale(2, RoundingMode.HALF_EVEN);
+//            jLsomaRelogios.setText(somadosRelogios.toString());
+//        }
 
     }
 
@@ -1550,222 +1605,125 @@ public class Tela extends javax.swing.JFrame {
         boolean apto103desocupado = jCBapto103desocupado.isSelected();
 
         if (apto103desocupado == true) {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCBapto103desocupado.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n ");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-
-            } else {
-                jTfApto103LeituraAnterior.setText("Apto Sem Morador");
-                jTfApto103LeituraAnterior.disable();
-                jTfApto103LeituraAtual.disable();
-                jTfApto103LeituraAtual.setText("Apto Sem Morador");
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-
-                jCbApto103TemRelogio.setEnabled(false);
+            jTfApto103LeituraAnterior.setText("Apto Sem Morador");
+            jTfApto103LeituraAnterior.setEnabled(false);
+            jTfApto103LeituraAtual.setEnabled(false);
+            jTfApto103LeituraAtual.setText("Apto Sem Morador");
+            if (aptosDesocupados < 6) {
+                aptosDesocupados++;
             }
+            jCbApto103TemRelogio.setEnabled(false);
+
         } else {
+            jCbApto103TemRelogio.setEnabled(true);
             if (aptosDesocupados > 0) {
                 aptosDesocupados--;
             }
-            jCbApto103TemRelogio.setEnabled(true);
-            ValidaSeTemRelogioApto103();
-
         }
-//        BigDecimal des = new BigDecimal(aptosDesocupados).setScale(2, RoundingMode.HALF_EVEN);
-//        console += ("\n Aptos Desocupados: " + des.toString());
-////        jTfSemRelogios.setText(des.toString());
     }
 
     public void ValidaSeApto104estaDesocupado() {
         boolean apto104desocupado = jCBapto104desocupado.isSelected();
 
         if (apto104desocupado == true) {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCBapto104desocupado.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-
-            } else {
-                jTfApto104LeituraAnterior.setText("Apto Sem Morador");
-                jTfApto104LeituraAnterior.disable();
-                jTfApto104LeituraAtual.disable();
-                jTfApto104LeituraAtual.setText("Apto Sem Morador");
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-                jCbApto104TemRelogio.setEnabled(false);
+            jTfApto104LeituraAnterior.setText("Apto Sem Morador");
+            jTfApto104LeituraAnterior.setEnabled(false);
+            jTfApto104LeituraAtual.setEnabled(false);
+            jTfApto104LeituraAtual.setText("Apto Sem Morador");
+            if (aptosDesocupados < 6) {
+                aptosDesocupados++;
             }
+            jCbApto104TemRelogio.setEnabled(false);
         } else {
+            jCbApto104TemRelogio.setEnabled(true);
             if (aptosDesocupados > 0) {
                 aptosDesocupados--;
             }
-            jCbApto104TemRelogio.setEnabled(true);
-
-            ValidaSeTemRelogioApto104();
-
         }
-//        BigDecimal des = new BigDecimal(aptosDesocupados).setScale(2, RoundingMode.HALF_EVEN);
-//        console += ("\n Aptos Desocupados: " + des.toString());
-////        jTfSemRelogios.setText(des.toString());
     }
 
     public void ValidaSeApto203estaDesocupado() {
         boolean apto203desocupado = jCBapto203desocupado.isSelected();
 
         if (apto203desocupado == true) {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCBapto203desocupado.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-            } else {
-                jTfApto203LeituraAnterior.setText("Apto Sem Morador");
-                jTfApto203LeituraAnterior.disable();
-                jTfApto203LeituraAtual.disable();
-                jTfApto203LeituraAtual.setText("Apto Sem Morador");
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-                jCbApto203TemRelogio.setEnabled(false);
-
+            jTfApto203LeituraAnterior.setText("Apto Sem Morador");
+            jTfApto203LeituraAnterior.setEnabled(false);
+            jTfApto203LeituraAtual.setEnabled(false);
+            jTfApto203LeituraAtual.setText("Apto Sem Morador");
+            if (aptosDesocupados < 6) {
+                aptosDesocupados++;
             }
+            jCbApto203TemRelogio.setEnabled(false);
+
         } else {
+            jCbApto203TemRelogio.setEnabled(true);
             if (aptosDesocupados > 0) {
                 aptosDesocupados--;
             }
-            jCbApto203TemRelogio.setEnabled(true);
-
-            ValidaSeTemRelogioApto203();
-
         }
-//        BigDecimal des = new BigDecimal(aptosDesocupados).setScale(2, RoundingMode.HALF_EVEN);
-//        console += ("\n Aptos Desocupados: " + des.toString());
-////        jTfSemRelogios.setText(des.toString());
     }
 
     public void ValidaSeApto204estaDesocupado() {
         boolean apto204desocupado = jCBapto204desocupado.isSelected();
 
         if (apto204desocupado == true) {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCBapto204desocupado.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-            } else {
-                jTfApto204LeituraAnterior.setText("Apto Sem Morador");
-                jTfApto204LeituraAnterior.disable();
-                jTfApto204LeituraAtual.disable();
-                jTfApto204LeituraAtual.setText("Apto Sem Morador");
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-                jCbApto204TemRelogio.setEnabled(false);
-
+            jTfApto204LeituraAnterior.setText("Apto Sem Morador");
+            jTfApto204LeituraAnterior.setEnabled(false);
+            jTfApto204LeituraAtual.setEnabled(false);
+            jTfApto204LeituraAtual.setText("Apto Sem Morador");
+            if (aptosDesocupados < 6) {
+                aptosDesocupados++;
             }
+            jCbApto204TemRelogio.setEnabled(false);
+
         } else {
+            jCbApto204TemRelogio.setEnabled(true);
             if (aptosDesocupados > 0) {
                 aptosDesocupados--;
             }
-            jCbApto204TemRelogio.setEnabled(true);
-
-            ValidaSeTemRelogioApto204();
-
         }
-//        BigDecimal des = new BigDecimal(aptosDesocupados).setScale(2, RoundingMode.HALF_EVEN);
-//        console += ("\n Aptos Desocupados: " + des.toString());
-////        jTfSemRelogios.setText(des.toString());
     }
 
     public void ValidaSeApto303estaDesocupado() {
         boolean apto303desocupado = jCBapto303desocupado.isSelected();
 
         if (apto303desocupado == true) {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCBapto303desocupado.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-            } else {
-                jTfApto303LeituraAnterior.setText("Apto Sem Morador");
-                jTfApto303LeituraAnterior.disable();
-                jTfApto303LeituraAtual.disable();
-                jTfApto303LeituraAtual.setText("Apto Sem Morador");
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-                jCbApto303TemRelogio.setEnabled(false);
-
+            jTfApto303LeituraAnterior.setText("Apto Sem Morador");
+            jTfApto303LeituraAnterior.setEnabled(false);
+            jTfApto303LeituraAtual.setEnabled(false);
+            jTfApto303LeituraAtual.setText("Apto Sem Morador");
+            if (aptosDesocupados < 6) {
+                aptosDesocupados++;
             }
+            jCbApto303TemRelogio.setEnabled(false);
+
         } else {
+            jCbApto303TemRelogio.setEnabled(true);
             if (aptosDesocupados > 0) {
                 aptosDesocupados--;
             }
-            jCbApto303TemRelogio.setEnabled(true);
-
-            ValidaSeTemRelogioApto303();
-
         }
-//        BigDecimal des = new BigDecimal(aptosDesocupados).setScale(2, RoundingMode.HALF_EVEN);
-//        console += ("\n Aptos Desocupados: " + des.toString());
-////        jTfSemRelogios.setText(des.toString());
     }
 
     public void ValidaSeApto304estaDesocupado() {
         boolean apto304desocupado = jCBapto304desocupado.isSelected();
 
         if (apto304desocupado == true) {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCBapto304desocupado.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-            } else {
-                jTfApto304LeituraAnterior.setText("Apto Sem Morador");
-                jTfApto304LeituraAnterior.disable();
-                jTfApto304LeituraAtual.disable();
-                jTfApto304LeituraAtual.setText("Apto Sem Morador");
-                if (aptosDesocupados < 6) {
-                    aptosDesocupados++;
-                }
-                jCbApto304TemRelogio.setEnabled(false);
-
+            jTfApto304LeituraAnterior.setText("Apto Sem Morador");
+            jTfApto304LeituraAnterior.setEnabled(false);
+            jTfApto304LeituraAtual.setEnabled(false);
+            jTfApto304LeituraAtual.setText("Apto Sem Morador");
+            if (aptosDesocupados < 6) {
+                aptosDesocupados++;
             }
+            jCbApto304TemRelogio.setEnabled(false);
+
         } else {
+            jCbApto304TemRelogio.setEnabled(true);
             if (aptosDesocupados > 0) {
                 aptosDesocupados--;
             }
-            jCbApto304TemRelogio.setEnabled(true);
-
-            ValidaSeTemRelogioApto304();
-
         }
-//        BigDecimal des = new BigDecimal(aptosDesocupados).setScale(2, RoundingMode.HALF_EVEN);
-//        console += ("\n Aptos Desocupados: " + des.toString());
-////        jTfSemRelogios.setText(des.toString());
     }
 
 // ----------------------------------------------------------------------------- 
@@ -1773,44 +1731,28 @@ public class Tela extends javax.swing.JFrame {
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
 
         if (apto103TemRelogio == false) {
-            jTfApto103LeituraAnterior.disable();
+            jTfApto103LeituraAnterior.setEnabled(false);
             jTfApto103LeituraAnterior.setText("Não tem Relógio!");
-            jTfApto103LeituraAtual.disable();
+            jTfApto103LeituraAtual.setEnabled(false);
             jTfApto103LeituraAtual.setText("Não tem Relógio!");
-
             if (naoTemRelogios < 6) {
                 naoTemRelogios++;
                 temRelogios--;
             }
-            jCBapto103desocupado.setEnabled(true);
-
+//            jCBapto103desocupado.setEnabled(true);
         } else {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCbApto103TemRelogio.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-            } else {
-                jTfApto103LeituraAnterior.enable();
-                jTfApto103LeituraAnterior.setText("0");
-                jTfApto103LeituraAtual.enable();
-                jTfApto103LeituraAtual.setText("0");
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-                jCBapto103desocupado.setEnabled(false);
-
+            jTfApto103LeituraAnterior.enable();
+            jTfApto103LeituraAnterior.setText("0");
+            jTfApto103LeituraAtual.enable();
+            jTfApto103LeituraAtual.setText("0");
+            if (naoTemRelogios > 0) {
+                naoTemRelogios--;
+                temRelogios++;
             }
+            jCBapto103desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Sem Relógios: " + semrel.toString());
         jTfSemRelogios.setText(semrel.toString());
-//        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto104() {
@@ -1818,82 +1760,55 @@ public class Tela extends javax.swing.JFrame {
 
         if (apto104TemRelogio == false) {
             jTfApto104LeituraAnterior.setText("Não tem Relógio!");
-            jTfApto104LeituraAnterior.disable();
-            jTfApto104LeituraAtual.disable();
+            jTfApto104LeituraAnterior.setEnabled(false);
+            jTfApto104LeituraAtual.setEnabled(false);
             jTfApto104LeituraAtual.setText("Não tem Relógio!");
             if (naoTemRelogios < 6) {
                 naoTemRelogios++;
                 temRelogios--;
             }
-            jCBapto104desocupado.setEnabled(true);
+//            jCBapto104desocupado.setEnabled(true);
         } else {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCbApto104TemRelogio.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-            } else {
-                jTfApto104LeituraAnterior.enable();
-                jTfApto104LeituraAnterior.setText("0");
-                jTfApto104LeituraAtual.enable();
-                jTfApto104LeituraAtual.setText("0");
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-                jCBapto104desocupado.setEnabled(false);
+            jTfApto104LeituraAnterior.enable();
+            jTfApto104LeituraAnterior.setText("0");
+            jTfApto104LeituraAtual.enable();
+            jTfApto104LeituraAtual.setText("0");
+            if (naoTemRelogios > 0) {
+                naoTemRelogios--;
+                temRelogios++;
             }
+            jCBapto104desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Sem Relógios: " + semrel.toString());
         jTfSemRelogios.setText(semrel.toString());
-//        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto203() {
         boolean apto203TemRelogio = jCbApto203TemRelogio.isSelected();
 
         if (apto203TemRelogio == false) {
-            jTfApto203LeituraAnterior.disable();
+            jTfApto203LeituraAnterior.setEnabled(false);
             jTfApto203LeituraAnterior.setText("Não tem Relógio!");
-            jTfApto203LeituraAtual.disable();
+            jTfApto203LeituraAtual.setEnabled(false);
             jTfApto203LeituraAtual.setText("Não tem Relógio!");
             if (naoTemRelogios < 6) {
                 naoTemRelogios++;
                 temRelogios--;
             }
-            jCBapto203desocupado.setEnabled(true);
+//            jCBapto203desocupado.setEnabled(true);
         } else {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCbApto203TemRelogio.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-            } else {
-                jTfApto203LeituraAnterior.enable();
-                jTfApto203LeituraAnterior.setText("0");
-                jTfApto203LeituraAtual.enable();
-                jTfApto203LeituraAtual.setText("0");
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-                jCBapto203desocupado.setEnabled(false);
-
+            jTfApto203LeituraAnterior.enable();
+            jTfApto203LeituraAnterior.setText("0");
+            jTfApto203LeituraAtual.enable();
+            jTfApto203LeituraAtual.setText("0");
+            if (naoTemRelogios > 0) {
+                naoTemRelogios--;
+                temRelogios++;
             }
+            jCBapto203desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Sem Relógios: " + semrel.toString());
         jTfSemRelogios.setText(semrel.toString());
-//        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto204() {
@@ -1901,84 +1816,54 @@ public class Tela extends javax.swing.JFrame {
 
         if (apto204TemRelogio == false) {
             jTfApto204LeituraAnterior.setText("Não tem Relógio!");
-            jTfApto204LeituraAnterior.disable();
-            jTfApto204LeituraAtual.disable();
+            jTfApto204LeituraAnterior.setEnabled(false);
+            jTfApto204LeituraAtual.setEnabled(false);
             jTfApto204LeituraAtual.setText("Não tem Relógio!");
             if (naoTemRelogios < 6) {
                 naoTemRelogios++;
                 temRelogios--;
             }
             jCBapto204desocupado.setEnabled(true);
-
         } else {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCbApto204TemRelogio.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-            } else {
-                jTfApto204LeituraAnterior.enable();
-                jTfApto204LeituraAnterior.setText("0");
-                jTfApto204LeituraAtual.enable();
-                jTfApto204LeituraAtual.setText("0");
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-                jCBapto204desocupado.setEnabled(false);
-
+            jTfApto204LeituraAnterior.enable();
+            jTfApto204LeituraAnterior.setText("0");
+            jTfApto204LeituraAtual.enable();
+            jTfApto204LeituraAtual.setText("0");
+            if (naoTemRelogios > 0) {
+                naoTemRelogios--;
+                temRelogios++;
             }
+//            jCBapto204desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Sem Relógios: " + semrel.toString());
         jTfSemRelogios.setText(semrel.toString());
-//        jTAsaidaConsole.setText(console);
     }
 
     public void ValidaSeTemRelogioApto303() {
         boolean apto303TemRelogio = jCbApto303TemRelogio.isSelected();
 
         if (apto303TemRelogio == false) {
-            jTfApto303LeituraAnterior.disable();
+            jTfApto303LeituraAnterior.setEnabled(false);
             jTfApto303LeituraAnterior.setText("Não tem Relógio!");
-            jTfApto303LeituraAtual.disable();
+            jTfApto303LeituraAtual.setEnabled(false);
             jTfApto303LeituraAtual.setText("Não tem Relógio!");
             if (naoTemRelogios < 6) {
                 naoTemRelogios++;
                 temRelogios--;
             }
-            jCBapto303desocupado.setEnabled(true);
-
+//            jCBapto303desocupado.setEnabled(true);
         } else {
-            if (aptosDesocupados + temRelogios == 5) {
-                jCbApto303TemRelogio.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-            } else {
-                jTfApto303LeituraAnterior.enable();
-                jTfApto303LeituraAnterior.setText("0");
-                jTfApto303LeituraAtual.enable();
-                jTfApto303LeituraAtual.setText("0");
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-                jCBapto303desocupado.setEnabled(false);
-
+            jTfApto303LeituraAnterior.enable();
+            jTfApto303LeituraAnterior.setText("0");
+            jTfApto303LeituraAtual.enable();
+            jTfApto303LeituraAtual.setText("0");
+            if (naoTemRelogios > 0) {
+                naoTemRelogios--;
+                temRelogios++;
             }
+            jCBapto303desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Sem Relógios: " + semrel.toString());
-//        jTAsaidaConsole.setText(console);
         jTfSemRelogios.setText(semrel.toString());
     }
 
@@ -1987,157 +1872,106 @@ public class Tela extends javax.swing.JFrame {
 
         if (apto304TemRelogio == false) {
             jTfApto304LeituraAnterior.setText("Não tem Relógio!");
-            jTfApto304LeituraAnterior.disable();
-            jTfApto304LeituraAtual.disable();
+            jTfApto304LeituraAnterior.setEnabled(false);
+            jTfApto304LeituraAtual.setEnabled(false);
             jTfApto304LeituraAtual.setText("Não tem Relógio!");
             if (naoTemRelogios < 6) {
                 naoTemRelogios++;
                 temRelogios--;
-//                System.out.println("deve entrar: sempre que for == false: " + temRelogios);
             }
-            jCBapto304desocupado.setEnabled(true);
-
+//            jCBapto304desocupado.setEnabled(true);
         } else {
-            if (aptosDesocupados + temRelogios >= 5) {
-                jCbApto304TemRelogio.setSelected(false);
-//            console = ("ATENÇÃO: Não é possÍvel marcar todos os Apartamentos como Desocupados!!! \n");
-                console = ("ATENÇÃO: A soma de Aptos com relógio mais os Aptos Desocupados não pode ultrapassar 5 !!! \n ");
-                jTAsaidaConsole.setText(console);
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-//                System.out.println("entra quando a soma for 5: " + temRelogios);
-
-            } else {
-                jTfApto304LeituraAnterior.enable();
-                jTfApto304LeituraAnterior.setText("0");
-                jTfApto304LeituraAtual.enable();
-                jTfApto304LeituraAtual.setText("0");
-                if (naoTemRelogios > 0) {
-                    naoTemRelogios--;
-                    temRelogios++;
-                }
-                jCBapto304desocupado.setEnabled(false);
-//                System.out.println("entra se a soma for diferente de 5: " + temRelogios);
-
+            jTfApto304LeituraAnterior.enable();
+            jTfApto304LeituraAnterior.setText("0");
+            jTfApto304LeituraAtual.enable();
+            jTfApto304LeituraAtual.setText("0");
+            if (naoTemRelogios > 0) {
+                naoTemRelogios--;
+                temRelogios++;
             }
+            jCBapto304desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Sem Relógios: " + semrel.toString());
         jTfSemRelogios.setText(semrel.toString());
-//        jTAsaidaConsole.setText(console);
     }
 
 // -----------------------------------------------------------------------------
     public void ValidaSeApto103pagouAtrasado() {
-
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
         if (Apto103pagouAtrasado == true) {
             atrasaramPagamento++;
-
         } else {
             if (atrasaramPagamento > 0) {
                 atrasaramPagamento--;
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Atrasaram Pagamento: " + atraso.toString());
-//        jTAsaidaConsole.setText(console);
         jTfAtrasaramPagamento.setText(atraso.toString());
-
-//        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
     public void ValidaSeApto104pagouAtrasado() {
-
         boolean Apto104pagouAtrasado = jCbApto104PagouAtrasado.isSelected();
         if (Apto104pagouAtrasado == true) {
             atrasaramPagamento++;
-
         } else {
             if (atrasaramPagamento > 0) {
                 atrasaramPagamento--;
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Atrasaram Pagamento: " + atraso.toString());
         jTfAtrasaramPagamento.setText(atraso.toString());
-//        jTAsaidaConsole.setText(console);
-//        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
     public void ValidaSeApto203pagouAtrasado() {
-
         boolean Apto203pagouAtrasado = jCbApto203PagouAtrasado.isSelected();
         if (Apto203pagouAtrasado == true) {
             atrasaramPagamento++;
-
         } else {
             if (atrasaramPagamento > 0) {
                 atrasaramPagamento--;
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Atrasaram Pagamento: " + atraso.toString());
         jTfAtrasaramPagamento.setText(atraso.toString());
-//        jTAsaidaConsole.setText(console);
-//        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
     public void ValidaSeApto204pagouAtrasado() {
-
         boolean Apto204pagouAtrasado = jCbApto204PagouAtrasado.isSelected();
         if (Apto204pagouAtrasado == true) {
             atrasaramPagamento++;
-
         } else {
             if (atrasaramPagamento > 0) {
                 atrasaramPagamento--;
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Atrasaram Pagamento: " + atraso.toString());
         jTfAtrasaramPagamento.setText(atraso.toString());
-//        jTAsaidaConsole.setText(console);
-//        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
     public void ValidaSeApto303pagouAtrasado() {
-
         boolean Apto303pagouAtrasado = jCbApto303PagouAtrasado.isSelected();
         if (Apto303pagouAtrasado == true) {
             atrasaramPagamento++;
-
         } else {
             if (atrasaramPagamento > 0) {
                 atrasaramPagamento--;
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Atrasaram Pagamento: " + atraso.toString());
         jTfAtrasaramPagamento.setText(atraso.toString());
-//        jTAsaidaConsole.setText(console);
-//        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
     public void ValidaSeApto304pagouAtrasado() {
-
         boolean Apto304pagouAtrasado = jCbApto304PagouAtrasado.isSelected();
         if (Apto304pagouAtrasado == true) {
             atrasaramPagamento++;
-
         } else {
             if (atrasaramPagamento > 0) {
                 atrasaramPagamento--;
             }
         }
         BigDecimal atraso = new BigDecimal(atrasaramPagamento).setScale(2, RoundingMode.HALF_EVEN);
-        console += ("\n Atrasaram Pagamento: " + atraso.toString());
         jTfAtrasaramPagamento.setText(atraso.toString());
-//        jTAsaidaConsole.setText(console);
-//        jTfAtrasaramPagamento.setText(atraso.toString());
-//        System.out.println("atrasaramPagamento: " + atrasaramPagamento);
     }
 
 // -----------------------------------------------------------------------------
@@ -2145,63 +1979,64 @@ public class Tela extends javax.swing.JFrame {
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
         boolean apto103desocupado = jCBapto103desocupado.isSelected();
-
         if (apto103desocupado == false || apto103TemRelogio == true) {
             if (apto103TemRelogio == true) {
                 double leituraAnterior = Double.parseDouble(jTfApto103LeituraAnterior.getText());
                 double leituraAtual = Double.parseDouble(jTfApto103LeituraAtual.getText());
                 double litros = leituraAtual - leituraAnterior;
-
                 if (litros < 0) {
                     litros = litros * (-1);
                 }
-
                 double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-
                 if (Apto103pagouAtrasado == true) {
-
                     BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto103ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor + jurosPorApto);
                     console += ("\n Apto 103: R$" + ValorApagar);
+//                    jTAsaidaConsole.setText(console);
 
                 } else {
-
                     BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto103ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 103: R$" + ValorApagar);
+//                    jTAsaidaConsole.setText(console);
+
                 }
-
             } else {
-
-//            CalculaValorAguaDemaisAptos();
                 if (Apto103pagouAtrasado == true) {
-
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto103ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 103: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 } else {
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto103ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 103: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 }
-                //  aqui vai o código se não tiver relógio
             }
         } else {
             if (Apto103pagouAtrasado == true) {
-
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 103: R$" + valorDaConta);
+//                jTAsaidaConsole.setText(console);
 
+                if (aptosDesocupadosAtrasados < 6) {
+                    aptosDesocupadosAtrasados++;
+                }
             } else {
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 103: R$" + valorDaConta);
+//                jTAsaidaConsole.setText(console);
 
+                if (aptosDesocupadosAtrasados > 0) {
+                    aptosDesocupadosAtrasados--;
+                }
             }
         }
     }
@@ -2210,9 +2045,7 @@ public class Tela extends javax.swing.JFrame {
         boolean Apto104pagouAtrasado = jCbApto104PagouAtrasado.isSelected();
         boolean apto104TemRelogio = jCbApto104TemRelogio.isSelected();
         boolean apto104desocupado = jCBapto104desocupado.isSelected();
-
         if (apto104desocupado == false || apto104TemRelogio == true) {
-
             if (apto104TemRelogio == true) {
                 double leituraAnterior = Double.parseDouble(jTfApto104LeituraAnterior.getText());
                 double leituraAtual = Double.parseDouble(jTfApto104LeituraAtual.getText());
@@ -2221,54 +2054,55 @@ public class Tela extends javax.swing.JFrame {
                     litros = litros * (-1);
                 }
                 double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-
                 if (Apto104pagouAtrasado == true) {
-
                     BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto104ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor + jurosPorApto);
                     console += ("\n Apto 104: R$" + ValorApagar);
+//                    jTAsaidaConsole.setText(console);
 
                 } else {
-
                     BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto104ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 104: R$" + ValorApagar);
+//                    jTAsaidaConsole.setText(console);
 
                 }
-
             } else {
-//            CalculaValorAguaDemaisAptos();
                 if (Apto104pagouAtrasado == true) {
-
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto104ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 104: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 } else {
-//                    DA ERRO SEMPRE NA LINHA DE BAIXO
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto104ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 104: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 }
-
-                //  aqui vai o código se não tiver relógio
             }
         } else {
-
             if (Apto104pagouAtrasado == true) {
-
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 104: R$" + valorDaConta);
+//                jTAsaidaConsole.setText(console);
 
+                if (aptosDesocupadosAtrasados < 6) {
+                    aptosDesocupadosAtrasados++;
+                }
             } else {
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 104: R$" + valorDaConta);
+//                jTAsaidaConsole.setText(console);
 
+                if (aptosDesocupadosAtrasados > 0) {
+                    aptosDesocupadosAtrasados--;
+                }
             }
         }
     }
@@ -2277,7 +2111,6 @@ public class Tela extends javax.swing.JFrame {
         boolean Apto203pagouAtrasado = jCbApto203PagouAtrasado.isSelected();
         boolean apto203TemRelogio = jCbApto203TemRelogio.isSelected();
         boolean apto203desocupado = jCBapto203desocupado.isSelected();
-
         if (apto203desocupado == false || apto203TemRelogio == true) {
             if (apto203TemRelogio == true) {
                 double leituraAnterior = Double.parseDouble(jTfApto203LeituraAnterior.getText());
@@ -2287,51 +2120,53 @@ public class Tela extends javax.swing.JFrame {
                     litros = litros * (-1);
                 }
                 double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-
                 if (Apto203pagouAtrasado == true) {
-
                     BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto203ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor + jurosPorApto);
                     console += ("\n Apto 203: R$" + ValorApagar);
+//                    jTAsaidaConsole.setText(console);
 
                 } else {
-
                     BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto203ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 203: R$" + ValorApagar);
+//                    jTAsaidaConsole.setText(console);
 
                 }
-
             } else {
-//            CalculaValorAguaDemaisAptos();
                 if (Apto203pagouAtrasado == true) {
-
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto203ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 203: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 } else {
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto203ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 203: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 }
-                //  aqui vai o código se não tiver relógio
             }
         } else {
             if (Apto203pagouAtrasado == true) {
-
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 203: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados < 6) {
+                    aptosDesocupadosAtrasados++;
+                }
             } else {
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 203: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados > 0) {
+                    aptosDesocupadosAtrasados--;
+                }
             }
         }
     }
@@ -2340,7 +2175,6 @@ public class Tela extends javax.swing.JFrame {
         boolean Apto204pagouAtrasado = jCbApto204PagouAtrasado.isSelected();
         boolean apto204TemRelogio = jCbApto204TemRelogio.isSelected();
         boolean apto204desocupado = jCBapto204desocupado.isSelected();
-
         if (apto204desocupado == false || apto204TemRelogio == true) {
             if (apto204TemRelogio == true) {
                 double leituraAnterior = Double.parseDouble(jTfApto204LeituraAnterior.getText());
@@ -2350,52 +2184,49 @@ public class Tela extends javax.swing.JFrame {
                     litros = litros * (-1);
                 }
                 double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-
                 if (Apto204pagouAtrasado == true) {
-
                     BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto204ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor + jurosPorApto);
                     console += ("\n Apto 204: R$" + ValorApagar);
-
+//                    jTAsaidaConsole.setText(console);
                 } else {
-
                     BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto204ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 204: R$" + ValorApagar);
-
+//                    jTAsaidaConsole.setText(console);
                 }
-
             } else {
-//            CalculaValorAguaDemaisAptos();
                 if (Apto204pagouAtrasado == true) {
-
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto204ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 204: R$" + valorDaConta);
-
+//                    jTAsaidaConsole.setText(console);
                 } else {
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto204ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 204: R$" + valorDaConta);
-
+//                    jTAsaidaConsole.setText(console);
                 }
-
-                //  aqui vai o código se não tiver relógio
             }
         } else {
             if (Apto204pagouAtrasado == true) {
-
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 204: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados < 6) {
+                    aptosDesocupadosAtrasados++;
+                }
             } else {
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 204: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados > 0) {
+                    aptosDesocupadosAtrasados--;
+                }
             }
         }
     }
@@ -2404,9 +2235,7 @@ public class Tela extends javax.swing.JFrame {
         boolean Apto303pagouAtrasado = jCbApto303PagouAtrasado.isSelected();
         boolean apto303TemRelogio = jCbApto303TemRelogio.isSelected();
         boolean apto303desocupado = jCBapto303desocupado.isSelected();
-
         if (apto303desocupado == false || apto303TemRelogio == true) {
-
             if (apto303TemRelogio == true) {
                 double leituraAnterior = Double.parseDouble(jTfApto303LeituraAnterior.getText());
                 double leituraAtual = Double.parseDouble(jTfApto303LeituraAtual.getText());
@@ -2415,51 +2244,51 @@ public class Tela extends javax.swing.JFrame {
                     litros = litros * (-1);
                 }
                 double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-
                 if (Apto303pagouAtrasado == true) {
-
                     BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto303ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor + jurosPorApto);
                     console += ("\n Apto 303: R$" + ValorApagar);
-
+//                    jTAsaidaConsole.setText(console);
                 } else {
-
                     BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto303ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 303: R$" + ValorApagar);
-
+//                    jTAsaidaConsole.setText(console);
                 }
-
             } else {
-//            CalculaValorAguaDemaisAptos();
                 if (Apto303pagouAtrasado == true) {
 
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto303ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 303: R$" + valorDaConta);
-
+//                    jTAsaidaConsole.setText(console);
                 } else {
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto303ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 303: R$" + valorDaConta);
+//                    jTAsaidaConsole.setText(console);
 
                 }
-                //  aqui vai o código se não tiver relógio
             }
         } else {
             if (Apto303pagouAtrasado == true) {
-
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 303: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados < 6) {
+                    aptosDesocupadosAtrasados++;
+                }
             } else {
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 303: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados > 0) {
+                    aptosDesocupadosAtrasados--;
+                }
             }
         }
     }
@@ -2468,7 +2297,6 @@ public class Tela extends javax.swing.JFrame {
         boolean Apto304pagouAtrasado = jCbApto304PagouAtrasado.isSelected();
         boolean apto304TemRelogio = jCbApto304TemRelogio.isSelected();
         boolean apto304desocupado = jCBapto304desocupado.isSelected();
-
         if (apto304desocupado == false || apto304TemRelogio == true) {
             if (apto304TemRelogio == true) {
                 double leituraAnterior = Double.parseDouble(jTfApto304LeituraAnterior.getText());
@@ -2478,91 +2306,90 @@ public class Tela extends javax.swing.JFrame {
                     litros = litros * (-1);
                 }
                 double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-
                 if (Apto304pagouAtrasado == true) {
-
                     BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto304ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 304: R$" + ValorApagar);
-
+//                    jTAsaidaConsole.setText(console);
                 } else {
                     BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto304ValorApagar.setText(ValorApagar.toString());
                     somaRelogios += (valor);
                     console += ("\n Apto 304: R$" + ValorApagar);
-
+//                    jTAsaidaConsole.setText(console);
                 }
-
             } else {
-//            CalculaValorAguaDemaisAptos();
                 if (Apto304pagouAtrasado == true) {
-
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto304ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 304: R$" + valorDaConta);
-
+//                    jTAsaidaConsole.setText(console);
                 } else {
                     BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                     jLapto304ValorApagar.setText(valorDaConta.toString());
                     console += ("\n Apto 304: R$" + valorDaConta);
-
+//                    jTAsaidaConsole.setText(console);
                 }
-
-                //  aqui vai o código se não tiver relógio
             }
         } else {
             if (Apto304pagouAtrasado == true) {
-
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 304: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados < 6) {
+                    aptosDesocupadosAtrasados++;
+                }
             } else {
                 BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 304: R$" + valorDaConta);
-
+//                jTAsaidaConsole.setText(console);
+                if (aptosDesocupadosAtrasados > 0) {
+                    aptosDesocupadosAtrasados--;
+                }
             }
         }
-
     }
 
 // -----------------------------------------------------------------------------
     /**
      * @param args the command line arguments
      */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Tela().setVisible(true);
-//            }
-//        });
-//    }
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Painel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Painel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Painel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Painel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Painel().setVisible(true);
+
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcalcular;
@@ -2636,6 +2463,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLalerta;
     private javax.swing.JLabel jLapto103ValorApagar;
     private javax.swing.JLabel jLapto104ValorApagar;
     private javax.swing.JLabel jLapto203ValorApagar;
