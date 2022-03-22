@@ -1280,27 +1280,27 @@ public class Painel extends javax.swing.JFrame {
     }//GEN-LAST:event_jBnovaLeituraActionPerformed
 
     private void jCBapto104desocupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBapto104desocupadoActionPerformed
-        ValidaSeApto104estaDesocupado();
+//        ValidaSeApto104estaDesocupado();
     }//GEN-LAST:event_jCBapto104desocupadoActionPerformed
 
     private void jCBapto204desocupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBapto204desocupadoActionPerformed
-        ValidaSeApto204estaDesocupado();
+//        ValidaSeApto204estaDesocupado();
     }//GEN-LAST:event_jCBapto204desocupadoActionPerformed
 
     private void jCBapto303desocupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBapto303desocupadoActionPerformed
-        ValidaSeApto303estaDesocupado();
+//        ValidaSeApto303estaDesocupado();
     }//GEN-LAST:event_jCBapto303desocupadoActionPerformed
 
     private void jCBapto304desocupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBapto304desocupadoActionPerformed
-        ValidaSeApto304estaDesocupado();
+//        ValidaSeApto304estaDesocupado();
     }//GEN-LAST:event_jCBapto304desocupadoActionPerformed
 
     private void jCBapto103desocupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBapto103desocupadoActionPerformed
-        ValidaSeApto103estaDesocupado();
+//        ValidaSeApto103estaDesocupado();
     }//GEN-LAST:event_jCBapto103desocupadoActionPerformed
 
     private void jCBapto203desocupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBapto203desocupadoActionPerformed
-        ValidaSeApto203estaDesocupado();
+//        ValidaSeApto203estaDesocupado();
     }//GEN-LAST:event_jCBapto203desocupadoActionPerformed
 
 // -----------------------------------------------------------------------------
@@ -1527,10 +1527,8 @@ public class Painel extends javax.swing.JFrame {
             jLsomaRelogios.setText(somadosRelogios.toString());
 
         } else if (naoTemRelogios > 0 && naoTemRelogios < 6 && atrasaramPagamento > 0) {
-//somaRelogiosSemJuros
-//jurosPorApto
+
             somaSemRelogios = ((TotalContaDeAgua - somaRelogiosSemJuros - (jurosPorApto * atrasaramPagamento)) / naoTemRelogios);
-//            somaSemRelogios = ((TotalContaDeAgua - somaRelogios - ((TotalJuros / atrasaramPagamento) * naoTemRelogios)) / naoTemRelogios);
             BigDecimal ValorApagarSemRelogios = new BigDecimal(somaSemRelogios * naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
             jLsaldoDemais.setText(ValorApagarSemRelogios.toString());
 
@@ -1605,133 +1603,133 @@ public class Painel extends javax.swing.JFrame {
     }
 
 // -----------------------------------------------------------------------------
-    public void ValidaSeApto103estaDesocupado() {
-        boolean apto103desocupado = jCBapto103desocupado.isSelected();
-
-        if (apto103desocupado == true) {
-            jTfApto103LeituraAnterior.setText("Apto Sem Morador");
-            jTfApto103LeituraAnterior.setEnabled(false);
-            jTfApto103LeituraAtual.setEnabled(false);
-            jTfApto103LeituraAtual.setText("Apto Sem Morador");
-            if (aptosDesocupados < 6) {
-                aptosDesocupados++;
-            }
-            jCbApto103TemRelogio.setEnabled(false);
-
-        } else {
-            jCbApto103TemRelogio.setEnabled(true);
-            if (aptosDesocupados > 0) {
-                aptosDesocupados--;
-            }
-        }
-    }
-
-    public void ValidaSeApto104estaDesocupado() {
-        boolean apto104desocupado = jCBapto104desocupado.isSelected();
-
-        if (apto104desocupado == true) {
-            jTfApto104LeituraAnterior.setText("Apto Sem Morador");
-            jTfApto104LeituraAnterior.setEnabled(false);
-            jTfApto104LeituraAtual.setEnabled(false);
-            jTfApto104LeituraAtual.setText("Apto Sem Morador");
-            if (aptosDesocupados < 6) {
-                aptosDesocupados++;
-            }
-            jCbApto104TemRelogio.setEnabled(false);
-        } else {
-            jCbApto104TemRelogio.setEnabled(true);
-            if (aptosDesocupados > 0) {
-                aptosDesocupados--;
-            }
-        }
-    }
-
-    public void ValidaSeApto203estaDesocupado() {
-        boolean apto203desocupado = jCBapto203desocupado.isSelected();
-
-        if (apto203desocupado == true) {
-            jTfApto203LeituraAnterior.setText("Apto Sem Morador");
-            jTfApto203LeituraAnterior.setEnabled(false);
-            jTfApto203LeituraAtual.setEnabled(false);
-            jTfApto203LeituraAtual.setText("Apto Sem Morador");
-            if (aptosDesocupados < 6) {
-                aptosDesocupados++;
-            }
-            jCbApto203TemRelogio.setEnabled(false);
-
-        } else {
-            jCbApto203TemRelogio.setEnabled(true);
-            if (aptosDesocupados > 0) {
-                aptosDesocupados--;
-            }
-        }
-    }
-
-    public void ValidaSeApto204estaDesocupado() {
-        boolean apto204desocupado = jCBapto204desocupado.isSelected();
-
-        if (apto204desocupado == true) {
-            jTfApto204LeituraAnterior.setText("Apto Sem Morador");
-            jTfApto204LeituraAnterior.setEnabled(false);
-            jTfApto204LeituraAtual.setEnabled(false);
-            jTfApto204LeituraAtual.setText("Apto Sem Morador");
-            if (aptosDesocupados < 6) {
-                aptosDesocupados++;
-            }
-            jCbApto204TemRelogio.setEnabled(false);
-
-        } else {
-            jCbApto204TemRelogio.setEnabled(true);
-            if (aptosDesocupados > 0) {
-                aptosDesocupados--;
-            }
-        }
-    }
-
-    public void ValidaSeApto303estaDesocupado() {
-        boolean apto303desocupado = jCBapto303desocupado.isSelected();
-
-        if (apto303desocupado == true) {
-            jTfApto303LeituraAnterior.setText("Apto Sem Morador");
-            jTfApto303LeituraAnterior.setEnabled(false);
-            jTfApto303LeituraAtual.setEnabled(false);
-            jTfApto303LeituraAtual.setText("Apto Sem Morador");
-            if (aptosDesocupados < 6) {
-                aptosDesocupados++;
-            }
-            jCbApto303TemRelogio.setEnabled(false);
-
-        } else {
-            jCbApto303TemRelogio.setEnabled(true);
-            if (aptosDesocupados > 0) {
-                aptosDesocupados--;
-            }
-        }
-    }
-
-    public void ValidaSeApto304estaDesocupado() {
-        boolean apto304desocupado = jCBapto304desocupado.isSelected();
-
-        if (apto304desocupado == true) {
-            jTfApto304LeituraAnterior.setText("Apto Sem Morador");
-            jTfApto304LeituraAnterior.setEnabled(false);
-            jTfApto304LeituraAtual.setEnabled(false);
-            jTfApto304LeituraAtual.setText("Apto Sem Morador");
-            if (aptosDesocupados < 6) {
-                aptosDesocupados++;
-            }
-            jCbApto304TemRelogio.setEnabled(false);
-
-        } else {
-            jCbApto304TemRelogio.setEnabled(true);
-            if (aptosDesocupados > 0) {
-                aptosDesocupados--;
-            }
-        }
-    }
+    //    public void ValidaSeApto103estaDesocupado() {
+    //        boolean apto103desocupado = jCBapto103desocupado.isSelected();
+    //
+    //        if (apto103desocupado == true) {
+    //            jTfApto103LeituraAnterior.setText("Apto Sem Morador");
+    //            jTfApto103LeituraAnterior.setEnabled(false);
+    //            jTfApto103LeituraAtual.setEnabled(false);
+    //            jTfApto103LeituraAtual.setText("Apto Sem Morador");
+    //            if (aptosDesocupados < 6) {
+    //                aptosDesocupados++;
+    //            }
+    //            jCbApto103TemRelogio.setEnabled(false);
+    //
+    //        } else {
+    //            jCbApto103TemRelogio.setEnabled(true);
+    //            if (aptosDesocupados > 0) {
+    //                aptosDesocupados--;
+    //            }
+    //        }
+    //    }
+    //
+    //    public void ValidaSeApto104estaDesocupado() {
+    //        boolean apto104desocupado = jCBapto104desocupado.isSelected();
+    //
+    //        if (apto104desocupado == true) {
+    //            jTfApto104LeituraAnterior.setText("Apto Sem Morador");
+    //            jTfApto104LeituraAnterior.setEnabled(false);
+    //            jTfApto104LeituraAtual.setEnabled(false);
+    //            jTfApto104LeituraAtual.setText("Apto Sem Morador");
+    //            if (aptosDesocupados < 6) {
+    //                aptosDesocupados++;
+    //            }
+    //            jCbApto104TemRelogio.setEnabled(false);
+    //        } else {
+    //            jCbApto104TemRelogio.setEnabled(true);
+    //            if (aptosDesocupados > 0) {
+    //                aptosDesocupados--;
+    //            }
+    //        }
+    //    }
+    //
+    //    public void ValidaSeApto203estaDesocupado() {
+    //        boolean apto203desocupado = jCBapto203desocupado.isSelected();
+    //
+    //        if (apto203desocupado == true) {
+    //            jTfApto203LeituraAnterior.setText("Apto Sem Morador");
+    //            jTfApto203LeituraAnterior.setEnabled(false);
+    //            jTfApto203LeituraAtual.setEnabled(false);
+    //            jTfApto203LeituraAtual.setText("Apto Sem Morador");
+    //            if (aptosDesocupados < 6) {
+    //                aptosDesocupados++;
+    //            }
+    //            jCbApto203TemRelogio.setEnabled(false);
+    //
+    //        } else {
+    //            jCbApto203TemRelogio.setEnabled(true);
+    //            if (aptosDesocupados > 0) {
+    //                aptosDesocupados--;
+    //            }
+    //        }
+    //    }
+    //
+    //    public void ValidaSeApto204estaDesocupado() {
+    //        boolean apto204desocupado = jCBapto204desocupado.isSelected();
+    //
+    //        if (apto204desocupado == true) {
+    //            jTfApto204LeituraAnterior.setText("Apto Sem Morador");
+    //            jTfApto204LeituraAnterior.setEnabled(false);
+    //            jTfApto204LeituraAtual.setEnabled(false);
+    //            jTfApto204LeituraAtual.setText("Apto Sem Morador");
+    //            if (aptosDesocupados < 6) {
+    //                aptosDesocupados++;
+    //            }
+    //            jCbApto204TemRelogio.setEnabled(false);
+    //
+    //        } else {
+    //            jCbApto204TemRelogio.setEnabled(true);
+    //            if (aptosDesocupados > 0) {
+    //                aptosDesocupados--;
+    //            }
+    //        }
+    //    }
+    //
+    //    public void ValidaSeApto303estaDesocupado() {
+    //        boolean apto303desocupado = jCBapto303desocupado.isSelected();
+    //
+    //        if (apto303desocupado == true) {
+    //            jTfApto303LeituraAnterior.setText("Apto Sem Morador");
+    //            jTfApto303LeituraAnterior.setEnabled(false);
+    //            jTfApto303LeituraAtual.setEnabled(false);
+    //            jTfApto303LeituraAtual.setText("Apto Sem Morador");
+    //            if (aptosDesocupados < 6) {
+    //                aptosDesocupados++;
+    //            }
+    //            jCbApto303TemRelogio.setEnabled(false);
+    //
+    //        } else {
+    //            jCbApto303TemRelogio.setEnabled(true);
+    //            if (aptosDesocupados > 0) {
+    //                aptosDesocupados--;
+    //            }
+    //        }
+    //    }
+    //
+    //    public void ValidaSeApto304estaDesocupado() {
+    //        boolean apto304desocupado = jCBapto304desocupado.isSelected();
+    //
+    //        if (apto304desocupado == true) {
+    //            jTfApto304LeituraAnterior.setText("Apto Sem Morador");
+    //            jTfApto304LeituraAnterior.setEnabled(false);
+    //            jTfApto304LeituraAtual.setEnabled(false);
+    //            jTfApto304LeituraAtual.setText("Apto Sem Morador");
+    //            if (aptosDesocupados < 6) {
+    //                aptosDesocupados++;
+    //            }
+    //            jCbApto304TemRelogio.setEnabled(false);
+    //
+    //        } else {
+    //            jCbApto304TemRelogio.setEnabled(true);
+    //            if (aptosDesocupados > 0) {
+    //                aptosDesocupados--;
+    //            }
+    //        }
+    //    }
 
 // ----------------------------------------------------------------------------- 
-    public void ValidaSeTemRelogioApto103() {
+    public  void ValidaSeTemRelogioApto103() {
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
 
         if (apto103TemRelogio == false) {
@@ -1759,7 +1757,7 @@ public class Painel extends javax.swing.JFrame {
         jTfSemRelogios.setText(semrel.toString());
     }
 
-    public void ValidaSeTemRelogioApto104() {
+    public  void ValidaSeTemRelogioApto104() {
         boolean apto104TemRelogio = jCbApto104TemRelogio.isSelected();
 
         if (apto104TemRelogio == false) {
@@ -1787,7 +1785,7 @@ public class Painel extends javax.swing.JFrame {
         jTfSemRelogios.setText(semrel.toString());
     }
 
-    public void ValidaSeTemRelogioApto203() {
+    public  void ValidaSeTemRelogioApto203() {
         boolean apto203TemRelogio = jCbApto203TemRelogio.isSelected();
 
         if (apto203TemRelogio == false) {
@@ -1815,7 +1813,7 @@ public class Painel extends javax.swing.JFrame {
         jTfSemRelogios.setText(semrel.toString());
     }
 
-    public void ValidaSeTemRelogioApto204() {
+    public  void ValidaSeTemRelogioApto204() {
         boolean apto204TemRelogio = jCbApto204TemRelogio.isSelected();
 
         if (apto204TemRelogio == false) {
@@ -1843,7 +1841,7 @@ public class Painel extends javax.swing.JFrame {
         jTfSemRelogios.setText(semrel.toString());
     }
 
-    public void ValidaSeTemRelogioApto303() {
+    public  void ValidaSeTemRelogioApto303() {
         boolean apto303TemRelogio = jCbApto303TemRelogio.isSelected();
 
         if (apto303TemRelogio == false) {
@@ -1871,7 +1869,7 @@ public class Painel extends javax.swing.JFrame {
         jTfSemRelogios.setText(semrel.toString());
     }
 
-    public void ValidaSeTemRelogioApto304() {
+    public  void ValidaSeTemRelogioApto304() {
         boolean apto304TemRelogio = jCbApto304TemRelogio.isSelected();
 
         if (apto304TemRelogio == false) {
@@ -1982,67 +1980,45 @@ public class Painel extends javax.swing.JFrame {
     public void CalculaValorAguaApto103() {
         boolean Apto103pagouAtrasado = jCbApto103PagouAtrasado.isSelected();
         boolean apto103TemRelogio = jCbApto103TemRelogio.isSelected();
-        boolean apto103desocupado = jCBapto103desocupado.isSelected();
-        if (apto103desocupado == false || apto103TemRelogio == true) {
-            if (apto103TemRelogio == true) {
-                double leituraAnterior = Double.parseDouble(jTfApto103LeituraAnterior.getText());
-                double leituraAtual = Double.parseDouble(jTfApto103LeituraAtual.getText());
-                double litros = leituraAtual - leituraAnterior;
-                if (litros < 0) {
-                    litros = litros * (-1);
-                }
-                double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-                if (Apto103pagouAtrasado == true) {
-                    BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto103ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor + jurosPorApto);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 103: R$" + ValorApagar);
+
+        if (apto103TemRelogio == true) {
+            double leituraAnterior = Double.parseDouble(jTfApto103LeituraAnterior.getText());
+            double leituraAtual = Double.parseDouble(jTfApto103LeituraAtual.getText());
+            double litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
+            if (Apto103pagouAtrasado == true) {
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto103ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor + jurosPorApto);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 103: R$" + ValorApagar);
 
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto103ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 103: R$" + ValorApagar);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             } else {
-                if (Apto103pagouAtrasado == true) {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto103ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 103: R$" + valorDaConta);
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto103ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 103: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
 
-                } else {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto103ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 103: R$" + valorDaConta);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             }
         } else {
             if (Apto103pagouAtrasado == true) {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 103: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
+//                    jTAsaidaConsole.setText(console);
 
-                if (aptosDesocupadosAtrasados < 6) {
-                    aptosDesocupadosAtrasados++;
-                }
             } else {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto103ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 103: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
+//                    jTAsaidaConsole.setText(console);
 
-                if (aptosDesocupadosAtrasados > 0) {
-                    aptosDesocupadosAtrasados--;
-                }
             }
         }
     }
@@ -2050,67 +2026,45 @@ public class Painel extends javax.swing.JFrame {
     public void CalculaValorAguaApto104() {
         boolean Apto104pagouAtrasado = jCbApto104PagouAtrasado.isSelected();
         boolean apto104TemRelogio = jCbApto104TemRelogio.isSelected();
-        boolean apto104desocupado = jCBapto104desocupado.isSelected();
-        if (apto104desocupado == false || apto104TemRelogio == true) {
-            if (apto104TemRelogio == true) {
-                double leituraAnterior = Double.parseDouble(jTfApto104LeituraAnterior.getText());
-                double leituraAtual = Double.parseDouble(jTfApto104LeituraAtual.getText());
-                double litros = leituraAtual - leituraAnterior;
-                if (litros < 0) {
-                    litros = litros * (-1);
-                }
-                double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-                if (Apto104pagouAtrasado == true) {
-                    BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto104ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor + jurosPorApto);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 104: R$" + ValorApagar);
+
+        if (apto104TemRelogio == true) {
+            double leituraAnterior = Double.parseDouble(jTfApto104LeituraAnterior.getText());
+            double leituraAtual = Double.parseDouble(jTfApto104LeituraAtual.getText());
+            double litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
+            if (Apto104pagouAtrasado == true) {
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto104ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor + jurosPorApto);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 104: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
 
-                } else {
-                    BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto104ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 104: R$" + ValorApagar);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             } else {
-                if (Apto104pagouAtrasado == true) {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto104ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 104: R$" + valorDaConta);
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto104ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 104: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
 
-                } else {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto104ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 104: R$" + valorDaConta);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             }
         } else {
             if (Apto104pagouAtrasado == true) {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 104: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
+//                    jTAsaidaConsole.setText(console);
 
-                if (aptosDesocupadosAtrasados < 6) {
-                    aptosDesocupadosAtrasados++;
-                }
             } else {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto104ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 104: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
+//                    jTAsaidaConsole.setText(console);
 
-                if (aptosDesocupadosAtrasados > 0) {
-                    aptosDesocupadosAtrasados--;
-                }
             }
         }
     }
@@ -2118,191 +2072,133 @@ public class Painel extends javax.swing.JFrame {
     public void CalculaValorAguaApto203() {
         boolean Apto203pagouAtrasado = jCbApto203PagouAtrasado.isSelected();
         boolean apto203TemRelogio = jCbApto203TemRelogio.isSelected();
-        boolean apto203desocupado = jCBapto203desocupado.isSelected();
-        if (apto203desocupado == false || apto203TemRelogio == true) {
-            if (apto203TemRelogio == true) {
-                double leituraAnterior = Double.parseDouble(jTfApto203LeituraAnterior.getText());
-                double leituraAtual = Double.parseDouble(jTfApto203LeituraAtual.getText());
-                double litros = leituraAtual - leituraAnterior;
-                if (litros < 0) {
-                    litros = litros * (-1);
-                }
-                double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-                if (Apto203pagouAtrasado == true) {
-                    BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto203ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor + jurosPorApto);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 203: R$" + ValorApagar);
+
+        if (apto203TemRelogio == true) {
+            double leituraAnterior = Double.parseDouble(jTfApto203LeituraAnterior.getText());
+            double leituraAtual = Double.parseDouble(jTfApto203LeituraAtual.getText());
+            double litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
+            if (Apto203pagouAtrasado == true) {
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto203ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor + jurosPorApto);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 203: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
 
-                } else {
-                    BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto203ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 203: R$" + ValorApagar);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             } else {
-                if (Apto203pagouAtrasado == true) {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto203ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 203: R$" + valorDaConta);
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto203ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 203: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
 
-                } else {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto203ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 203: R$" + valorDaConta);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             }
         } else {
             if (Apto203pagouAtrasado == true) {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 203: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados < 6) {
-                    aptosDesocupadosAtrasados++;
-                }
+//                    jTAsaidaConsole.setText(console);
+
             } else {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto203ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 203: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados > 0) {
-                    aptosDesocupadosAtrasados--;
-                }
+//                    jTAsaidaConsole.setText(console);
+
             }
         }
+
     }
 
     public void CalculaValorAguaApto204() {
         boolean Apto204pagouAtrasado = jCbApto204PagouAtrasado.isSelected();
         boolean apto204TemRelogio = jCbApto204TemRelogio.isSelected();
-        boolean apto204desocupado = jCBapto204desocupado.isSelected();
-        if (apto204desocupado == false || apto204TemRelogio == true) {
-            if (apto204TemRelogio == true) {
-                double leituraAnterior = Double.parseDouble(jTfApto204LeituraAnterior.getText());
-                double leituraAtual = Double.parseDouble(jTfApto204LeituraAtual.getText());
-                double litros = leituraAtual - leituraAnterior;
-                if (litros < 0) {
-                    litros = litros * (-1);
-                }
-                double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-                if (Apto204pagouAtrasado == true) {
-                    BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto204ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor + jurosPorApto);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 204: R$" + ValorApagar);
+
+        if (apto204TemRelogio == true) {
+            double leituraAnterior = Double.parseDouble(jTfApto204LeituraAnterior.getText());
+            double leituraAtual = Double.parseDouble(jTfApto204LeituraAtual.getText());
+            double litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
+            if (Apto204pagouAtrasado == true) {
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto204ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor + jurosPorApto);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 204: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto204ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 204: R$" + ValorApagar);
-//                    jTAsaidaConsole.setText(console);
-                }
             } else {
-                if (Apto204pagouAtrasado == true) {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto204ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 204: R$" + valorDaConta);
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto204ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 204: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto204ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 204: R$" + valorDaConta);
-//                    jTAsaidaConsole.setText(console);
-                }
             }
         } else {
             if (Apto204pagouAtrasado == true) {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 204: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados < 6) {
-                    aptosDesocupadosAtrasados++;
-                }
+//                    jTAsaidaConsole.setText(console);
             } else {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto204ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 204: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados > 0) {
-                    aptosDesocupadosAtrasados--;
-                }
+//                    jTAsaidaConsole.setText(console);
             }
         }
+
     }
 
     public void CalculaValorAguaApto303() {
         boolean Apto303pagouAtrasado = jCbApto303PagouAtrasado.isSelected();
         boolean apto303TemRelogio = jCbApto303TemRelogio.isSelected();
-        boolean apto303desocupado = jCBapto303desocupado.isSelected();
-        if (apto303desocupado == false || apto303TemRelogio == true) {
-            if (apto303TemRelogio == true) {
-                double leituraAnterior = Double.parseDouble(jTfApto303LeituraAnterior.getText());
-                double leituraAtual = Double.parseDouble(jTfApto303LeituraAtual.getText());
-                double litros = leituraAtual - leituraAnterior;
-                if (litros < 0) {
-                    litros = litros * (-1);
-                }
-                double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-                if (Apto303pagouAtrasado == true) {
-                    BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto303ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor + jurosPorApto);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 303: R$" + ValorApagar);
+
+        if (apto303TemRelogio == true) {
+            double leituraAnterior = Double.parseDouble(jTfApto303LeituraAnterior.getText());
+            double leituraAtual = Double.parseDouble(jTfApto303LeituraAtual.getText());
+            double litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
+            if (Apto303pagouAtrasado == true) {
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto303ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor + jurosPorApto);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 303: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto303ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 303: R$" + ValorApagar);
-//                    jTAsaidaConsole.setText(console);
-                }
             } else {
-                if (Apto303pagouAtrasado == true) {
-
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto303ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 303: R$" + valorDaConta);
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto303ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 303: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto303ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 303: R$" + valorDaConta);
-//                    jTAsaidaConsole.setText(console);
-
-                }
             }
         } else {
             if (Apto303pagouAtrasado == true) {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 303: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados < 6) {
-                    aptosDesocupadosAtrasados++;
-                }
+//                    jTAsaidaConsole.setText(console);
             } else {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto303ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 303: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados > 0) {
-                    aptosDesocupadosAtrasados--;
-                }
+//                    jTAsaidaConsole.setText(console);
+
             }
         }
     }
@@ -2310,61 +2206,41 @@ public class Painel extends javax.swing.JFrame {
     public void CalculaValorAguaApto304() {
         boolean Apto304pagouAtrasado = jCbApto304PagouAtrasado.isSelected();
         boolean apto304TemRelogio = jCbApto304TemRelogio.isSelected();
-        boolean apto304desocupado = jCBapto304desocupado.isSelected();
-        if (apto304desocupado == false || apto304TemRelogio == true) {
-            if (apto304TemRelogio == true) {
-                double leituraAnterior = Double.parseDouble(jTfApto304LeituraAnterior.getText());
-                double leituraAtual = Double.parseDouble(jTfApto304LeituraAtual.getText());
-                double litros = leituraAtual - leituraAnterior;
-                if (litros < 0) {
-                    litros = litros * (-1);
-                }
-                double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
-                if (Apto304pagouAtrasado == true) {
-                    BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto304ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 304: R$" + ValorApagar);
+
+        if (apto304TemRelogio == true) {
+            double leituraAnterior = Double.parseDouble(jTfApto304LeituraAnterior.getText());
+            double leituraAtual = Double.parseDouble(jTfApto304LeituraAtual.getText());
+            double litros = leituraAtual - leituraAnterior;
+            if (litros < 0) {
+                litros = litros * (-1);
+            }
+            double valor = (litros * (valorM3porApto / 1000)) + valorTaxaPorApto;
+            if (Apto304pagouAtrasado == true) {
+                BigDecimal ValorApagar = new BigDecimal(valor + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto304ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 304: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto304ValorApagar.setText(ValorApagar.toString());
-                    somaRelogios += (valor);
-                    somaRelogiosSemJuros += (valor);
-                    console += ("\n Apto 304: R$" + ValorApagar);
-//                    jTAsaidaConsole.setText(console);
-                }
             } else {
-                if (Apto304pagouAtrasado == true) {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto304ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 304: R$" + valorDaConta);
+                BigDecimal ValorApagar = new BigDecimal(valor).setScale(2, RoundingMode.HALF_EVEN);
+                jLapto304ValorApagar.setText(ValorApagar.toString());
+                somaRelogios += (valor);
+                somaRelogiosSemJuros += (valor);
+                console += ("\n Apto 304: R$" + ValorApagar);
 //                    jTAsaidaConsole.setText(console);
-                } else {
-                    BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-                    jLapto304ValorApagar.setText(valorDaConta.toString());
-                    console += ("\n Apto 304: R$" + valorDaConta);
-//                    jTAsaidaConsole.setText(console);
-                }
             }
         } else {
             if (Apto304pagouAtrasado == true) {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios + jurosPorApto).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 304: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados < 6) {
-                    aptosDesocupadosAtrasados++;
-                }
+//                    jTAsaidaConsole.setText(console);
             } else {
-                BigDecimal valorDaConta = new BigDecimal(valorTaxaPorApto).setScale(2, RoundingMode.HALF_EVEN);
+                BigDecimal valorDaConta = new BigDecimal(somaSemRelogios).setScale(2, RoundingMode.HALF_EVEN);
                 jLapto304ValorApagar.setText(valorDaConta.toString());
                 console += ("\n Apto 304: R$" + valorDaConta);
-//                jTAsaidaConsole.setText(console);
-                if (aptosDesocupadosAtrasados > 0) {
-                    aptosDesocupadosAtrasados--;
-                }
+//                    jTAsaidaConsole.setText(console);
             }
         }
     }
