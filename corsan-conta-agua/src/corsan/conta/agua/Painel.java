@@ -28,10 +28,10 @@ public class Painel extends javax.swing.JFrame {
      */
 //    Variaveis Globais:
     int atrasaramPagamento = 0;
-    double aptosDesocupados = 0;
+//    double aptosDesocupados = 0;
     int naoTemRelogios = 6;
     int temRelogios = 0;
-    double aptosDesocupadosAtrasados = 0;
+//    double aptosDesocupadosAtrasados = 0;
 
     double jurosPorApto = 0;
     double somaRelogiosSemJuros = 0;
@@ -62,7 +62,7 @@ public class Painel extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
 
         jTfAtrasaramPagamento.setEnabled(false);
-        jTfSemRelogios.setEnabled(false);
+//        jTfSemRelogios.setEnabled(false);
 
         jLalerta.setText("");
         ValidaSeTemRelogioApto103();
@@ -73,12 +73,12 @@ public class Painel extends javax.swing.JFrame {
         ValidaSeTemRelogioApto304();
 
         console = "";
-        jCBapto103desocupado.setEnabled(false);
-        jCBapto104desocupado.setEnabled(false);
-        jCBapto203desocupado.setEnabled(false);
-        jCBapto204desocupado.setEnabled(false);
-        jCBapto303desocupado.setEnabled(false);
-        jCBapto304desocupado.setEnabled(false);
+//        jCBapto103desocupado.setEnabled(false);
+//        jCBapto104desocupado.setEnabled(false);
+//        jCBapto203desocupado.setEnabled(false);
+//        jCBapto204desocupado.setEnabled(false);
+//        jCBapto303desocupado.setEnabled(false);
+//        jCBapto304desocupado.setEnabled(false);
 
     }
 
@@ -127,7 +127,6 @@ public class Painel extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jTfApto104LeituraAtual = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
         jCBapto104desocupado = new javax.swing.JCheckBox();
         jCBapto103desocupado = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
@@ -176,12 +175,8 @@ public class Painel extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jTfApto304LeituraAtual = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
         jCBapto303desocupado = new javax.swing.JCheckBox();
         jCBapto304desocupado = new javax.swing.JCheckBox();
-        jLabel40 = new javax.swing.JLabel();
-        jTfSemRelogios = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLsaldoDemais = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
@@ -363,8 +358,6 @@ public class Painel extends javax.swing.JFrame {
         jLabel12.setBackground(new java.awt.Color(220, 220, 220));
         jLabel12.setText("Apto 104 - Leitura Anterior:");
 
-        jLabel37.setText("Rose:");
-
         jCBapto104desocupado.setBackground(new java.awt.Color(220, 220, 220));
         jCBapto104desocupado.setText("Apto Desocupado?");
         jCBapto104desocupado.addActionListener(new java.awt.event.ActionListener() {
@@ -405,12 +398,9 @@ public class Painel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLapto103ValorApagar))
-                    .addComponent(jLabel37))
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLapto103ValorApagar)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
@@ -483,9 +473,7 @@ public class Painel extends javax.swing.JFrame {
                                     .addComponent(jTfApto103LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel37))
+                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jTfApto103LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -786,10 +774,6 @@ public class Painel extends javax.swing.JFrame {
         jLabel36.setBackground(new java.awt.Color(220, 220, 220));
         jLabel36.setText("Apto 304 - Leitura Anterior:");
 
-        jLabel38.setText("Felipe:");
-
-        jLabel39.setText("William:");
-
         jCBapto303desocupado.setBackground(new java.awt.Color(220, 220, 220));
         jCBapto303desocupado.setText("Apto Desocupado?");
         jCBapto303desocupado.addActionListener(new java.awt.event.ActionListener() {
@@ -830,12 +814,9 @@ public class Painel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel30)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLapto303ValorApagar))
-                    .addComponent(jLabel38))
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLapto303ValorApagar)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
@@ -857,12 +838,9 @@ public class Painel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLapto304ValorApagar))
-                    .addComponent(jLabel39))
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLapto304ValorApagar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -895,9 +873,7 @@ public class Painel extends javax.swing.JFrame {
                                     .addComponent(jTfApto304LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel34)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel39))
+                                .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jTfApto304LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -914,9 +890,7 @@ public class Painel extends javax.swing.JFrame {
                                     .addComponent(jTfApto303LeituraAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel29)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel38))
+                                .addComponent(jLabel28)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jTfApto303LeituraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -925,13 +899,6 @@ public class Painel extends javax.swing.JFrame {
                                     .addComponent(jLapto303ValorApagar))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jLabel40.setText("Sem Relógios:");
-
-        jTfSemRelogios.setEditable(false);
-        jTfSemRelogios.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTfSemRelogios.setText("---");
-        jTfSemRelogios.setMinimumSize(new java.awt.Dimension(8, 80));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -1048,10 +1015,6 @@ public class Painel extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTfAtrasaramPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel40)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTfSemRelogios, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1109,8 +1072,6 @@ public class Painel extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jTfTotalM3conta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTfSemRelogios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1751,10 +1712,10 @@ public class Painel extends javax.swing.JFrame {
                 naoTemRelogios--;
                 temRelogios++;
             }
-            jCBapto103desocupado.setEnabled(false);
+//            jCBapto103desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTfSemRelogios.setText(semrel.toString());
+//        jTfSemRelogios.setText(semrel.toString());
     }
 
     public  void ValidaSeTemRelogioApto104() {
@@ -1779,10 +1740,10 @@ public class Painel extends javax.swing.JFrame {
                 naoTemRelogios--;
                 temRelogios++;
             }
-            jCBapto104desocupado.setEnabled(false);
+//            jCBapto104desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTfSemRelogios.setText(semrel.toString());
+//        jTfSemRelogios.setText(semrel.toString());
     }
 
     public  void ValidaSeTemRelogioApto203() {
@@ -1807,10 +1768,10 @@ public class Painel extends javax.swing.JFrame {
                 naoTemRelogios--;
                 temRelogios++;
             }
-            jCBapto203desocupado.setEnabled(false);
+//            jCBapto203desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTfSemRelogios.setText(semrel.toString());
+//        jTfSemRelogios.setText(semrel.toString());
     }
 
     public  void ValidaSeTemRelogioApto204() {
@@ -1825,7 +1786,7 @@ public class Painel extends javax.swing.JFrame {
                 naoTemRelogios++;
                 temRelogios--;
             }
-            jCBapto204desocupado.setEnabled(true);
+//            jCBapto204desocupado.setEnabled(true);
         } else {
             jTfApto204LeituraAnterior.enable();
             jTfApto204LeituraAnterior.setText("0");
@@ -1838,7 +1799,7 @@ public class Painel extends javax.swing.JFrame {
 //            jCBapto204desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTfSemRelogios.setText(semrel.toString());
+//        jTfSemRelogios.setText(semrel.toString());
     }
 
     public  void ValidaSeTemRelogioApto303() {
@@ -1863,10 +1824,10 @@ public class Painel extends javax.swing.JFrame {
                 naoTemRelogios--;
                 temRelogios++;
             }
-            jCBapto303desocupado.setEnabled(false);
+//            jCBapto303desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTfSemRelogios.setText(semrel.toString());
+//        jTfSemRelogios.setText(semrel.toString());
     }
 
     public  void ValidaSeTemRelogioApto304() {
@@ -1891,10 +1852,10 @@ public class Painel extends javax.swing.JFrame {
                 naoTemRelogios--;
                 temRelogios++;
             }
-            jCBapto304desocupado.setEnabled(false);
+//            jCBapto304desocupado.setEnabled(false);
         }
         BigDecimal semrel = new BigDecimal(naoTemRelogios).setScale(2, RoundingMode.HALF_EVEN);
-        jTfSemRelogios.setText(semrel.toString());
+//        jTfSemRelogios.setText(semrel.toString());
     }
 
 // -----------------------------------------------------------------------------
@@ -2338,11 +2299,7 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -2391,7 +2348,6 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JTextField jTfApto304LeituraAnterior;
     private javax.swing.JTextField jTfApto304LeituraAtual;
     private javax.swing.JTextField jTfAtrasaramPagamento;
-    private javax.swing.JTextField jTfSemRelogios;
     private javax.swing.JTextField jTfTaxaDeAgua;
     private javax.swing.JTextField jTfTotalContaDeAgua;
     private javax.swing.JTextField jTfTotalJuros;
